@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:20:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Baolau">
+    
+    <title>Train Ticket Online VN | Search</title>
+    <meta name="description" content="Information and ticket booking service for travelling in China, Vietnam, Cambodia, Laos, Thailand, Myanmar, Malaysia, Philippines and Indonesia. Find schedules and fares, book flights, trains, buses and ferries."/>
+    <meta name="keywords" content="flights, cheap flights, flights to hanoi, flights to bangkok, flights to saigon, book train ticket, book train ticket online, train to sapa, train to hanoi, train to saigon, train to bangkok, train to chiang mai, bus ticket, book bus ticket online, buy bus ticket online, bus ticket to hanoi, bus ticket to saigon"/>
+    
+    <base target="_top">
+
+
+	<!-- Libraries -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/bootstrap4562.css?mod=1">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-switch/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/lightgallery/lightgallery.css">
+    <link rel="stylesheet" type="text/css" href="../dist/baolau.min6ffc.css?v=2020-02-21">
+    <style>
+        #dateTimePicker_1 {
+            border: none !important;
+            width: 100%;
+            background-color: inherit !important;
+        }
+
+        #dateTimePicker_2 {
+            border: none !important;
+            width: 100%;
+            background-color: inherit !important;
+        }
+    </style>
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/js/jquery.min.js"></script>
+</head>
+<%if(typeof(error) == "undefined"){%>
+<body style="overflow: hidden;">
+<%}else{%>
+    <body>
+<%}%>
+    <input type="hidden" id="myData" value="<%=result%>"/>
+    <input type="hidden" id="query" value="<%=query%>"/>
+
+    <div id="message" class="container-fluid" style="display:none">
+        <div class="close-message smaller-text" onclick="$('#message').slideUp('fast')"><i class="fa fa-times"></i></div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 text-center">
+               <span class="message small-text"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_message" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="gap gap-super-small"></div>                   
+                    <div id="modal_message_title" style="letter-spacing: 3px; margin: -30px 0 35px;" class="refrigerator uppercase yellow-text super-big-text">
+
+                    </div>
+                    <div class="gap gap-small"></div>
+                    <div id="modal_message_text" style="letter-spacing: 1px; color: #f5f5f5" class="message big-text italic">
+
+                    </div>
+                </div><!-- /.modal-content -->
+                <div class="gap gap-super-small"></div>
+            </div>
+        </div>
+    </div>
+    <%if(typeof(error) == "undefined"){%>
+    <div id="waiting_overlay" style="display:block;background-color: lightgoldenrodyellow;">
+        <div class="container">
+            <h2 style="color: #fff; text-transform: uppercase;" id="waiting_text1" class="refrigerator"></h2>
+            <span id="waiting_text2" class="big-big-text"></span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="../images/genaral/244.gif" style="width:100px">
+        </div>
+    </div>
+    <%}%>
+        
+    
+
+<!-- Sidebar Content -->
+
+
+<%- include('section')%>
+
+<!---------------------------END Mobile Sidebar Content-------------------------------------->
+
+<div id="menu_overlay"></div>
+
+<div id="main_container" >
+<div class="filter">
+<div class="global-wrap">
+    <%- include('sectionDesktop')%>
+<%if(typeof(error) == "undefined"){%>
+<div class="subpage panel-dark search_result_page" id="app">
+
+    <!-- PC progress-bar-holder -->
+    <div class="container">
+        <div class="gap gap-super-small hidden-sm hidden-xs"></div>
+        <div class="progress-bar-holder hidden-sm hidden-xs">
+            <ul class="progressbar small-text bold">
+                <li class="current">
+                    <span>DEPARTURE</span>
+                    <em class="progress-bar-arrow "></em>
+                </li>
+                <li class="">
+                    <span>PASSENGERS</span>
+                    <em class="progress-bar-arrow "></em>
+                </li>
+                <li class="">
+                    <span>PAYMENT</span>
+                    <em class="progress-bar-arrow "></em>
+                </li>
+                <li class="">
+                    <span>CONFIRMATION</span>
+                    <em class="progress-bar-arrow "></em>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- container -->
+    <!-- END PC progress-bar-holder -->
+
+    <!-- MOBILE progress-bar-holder -->
+    <div class="container mobile-progressbar visible-xs visible-sm">
+        <div class="row booking-progress uppercase">
+            <div class="col-xs-2 col-sm-3 small-text">
+                &nbsp; </div>
+
+            <div class="col-xs-8 col-sm-6">
+                <div class="current bold">
+                    <span>Departure</span>
+                </div>
+            </div>
+
+            <div style="opacity: .3" class="col-xs-2 col-sm-3 small-text">
+                <div class="progress-arrow-right pull-right small-text"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END MOBILE progress-bar-holder -->
+
+    <!-- Your Search -->
+    <div class="container">
+        <div class="gap-section hidden-sm hidden-xs"></div>
+
+        
+
+        <div id="search-modify" class="toggle-container">
+            <div class="gap-section hidden-sm hidden-xs"></div>
+            <div class="mobile visible-xs visible-sm">
+                <div class="row panel padded-panel">
+                    <!-- MOBILE -->
+                    <div class="col-sm-9 col-xs-9">
+                        <template>
+                            <div class="mobile-destination mobile-usersearch-info-item bold" style="padding-left: 0px;">
+                                <span >{{ departure }}</span> <i class="fa fa-long-arrow-right"></i> <span >{{ arrival }}</span>
+                            </div>
+                        </template>
+
+                        <div class="mobile-usersearch-info-item pull-left">
+                            <span>     
+                        <i style="padding-right: 6px;" class="fa fa-calendar"></i>                                   
+                        We, 18/03                        	  
+                    </span>
+
+                        </div>
+
+                        <div class="vertical-character-devider mobile-usersearch-info-item pull-left">
+                            |
+                        </div>
+
+                        <div class="mobile-usersearch-info-item pull-left">
+                            <span>
+
+                        <i style="padding-right: 6px;" class="fa fa-user"></i>
+                        1 Passengers                    </span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-3">
+                        <div class="pull-right">
+                            <a style="border:none; letter-spacing:0px; color: white;font-size: 13px !important;" class="btn fixed-width fa fa-angle-double-left btn-modifysearch" href="/">Back to home</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--  End row MOBILE -->
+            </div>
+
+            <!-- DESKTOP -->
+            <div class="hidden-sm hidden-xs">
+                <div class="row panel padded-panel">
+                    <div class="col-xs-12">
+                        <div class="usersearch-info-item" style="padding-left: 0px">
+                            <span>
+                        Departure
+                        <br>
+                        <b class="super-bold">{{departure}}</b>
+                    </span>
+                            <span><i class="fa fa-long-arrow-right"></i></span>
+                            <span>
+                        Destination                        <br>
+                        <b class="super-bold">{{arrival}}</b>
+                    </span>
+                        </div>
+
+                        <div class="usersearch-info-item">
+                            <span> 
+                        <i style="padding-right: 6px;" class="fa fa-calendar"></i>
+                    </span>
+                            <span>
+                        Depart                        <br>
+                        <b class="super-bold">{{formatDate(result[0].DateDeparture)}} </b>     
+                    </span>
+                        </div>
+
+                        <div class="usersearch-info-item" style="border-right: none;">
+                            <span> 
+                        <i style="padding-right: 6px;" class="fa fa-user"></i>
+                    </span>
+                            <span>
+                        Passengers                        <br>
+                        <b class="super-bold">{{query.PASSENGERS}}</b>        
+                    </span>
+                        </div>
+
+                        <div class="usersearch-info-item pull-right small-text" style="border-right: none; padding-right: 0px">
+                            <a style="border:none; letter-spacing:0px; color: white;font-size: 13px !important;" class="btn fixed-width fa fa-angle-double-left btn-modifysearch" href="/">Back to home</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--  End row DESKTOP -->
+            </div>
+        </div>
+        <!--  toggle-container-->
+    </div>
+    <!-- END Your Search -->
+
+    <!-- SEARCH FORM -->
+    <div class="container">
+        <div class="toggle-container">
+            <div id="searchmodify-collapse" class="row panel padded-panel collapse">
+                <div class="col-xs-12">
+
+                    <h2 class="visible-sm visible-xs" style="color:#a1a8ae">Where do you want to go?</h2>
+
+                    <form id="search_form" action="https://booking.baolau.com/en/results" method="get">
+
+                        <div class="gap gap-small widget-hide"></div>
+
+                        <!-- Hidden fields -->
+                        <input id="departure_reload" type="hidden" name="departure_reload" value="">
+                        <input id="transports" name="transports" type="hidden" value="plane-train-bus-boat-taxi-walking">
+                        <input name="lang" type="hidden" value="en">
+
+                        <!-- Big row of Booking Process -->
+                       
+                        <!-- END big row -->
+                    </form>
+
+                    <div class="gap gap-small visible-sm visible-xs"></div>
+
+                    <!-- Modal travel with child-->
+                    <div class="modal fade" id="travel_with_child" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="row">
+                                    <div class="container-popup">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <div class="modal-title">TRAVEL WITH CHILDREN?</div>
+                                            <span class="popup-form-line">
+                            Please select the number of passengers, including children.<br>Later on you will be able to specify the age and apply for children discount on selected transport providers.                        </span>
+                                        </div>
+                                        <div class="gap gap-small"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Modal children-->
+                </div>      
+            </div>
+        </div>
+        <!--  toggle-container-->
+    </div>
+    <!-- End SEARCH FORM -->
+    <div class="gap gap-section"></div>
+
+    <!-- PC filter -->
+    <div class="container">
+        <div class="gap gap-title">
+            <h2>Select your departing trip</h2>
+            <div class="horizontal-devider"></div>
+        </div>
+        <div id="filter-transport" class="row main relative">
+            <h1 style="margin-top: 0" class="booking-desp big-text col-md-7 col-sm-12">
+					Results from <span class="blue-text super-bold" >{{ departure }}</span> to <span class="blue-text super-bold" >{{ arrival }}</span> on <span class="bold">{{formatDate(result[0].DateDeparture)}}</span>
+			</h1>
+            
+            <!--  filters-view-->
+        </div>
+        <!-- Search Filters -->
+
+    </div>
+
+    <div class="gap gap-section"></div>
+
+    <!-- Search result -->
+    <div class="container" id="app">
+        <div>
+            <div class="table__search-results">
+                <table id="search_results" class="table">
+                    <thead>
+                        <tr id="results_headers" style="border:0">
+                            <th class="border-left">&nbsp;</th>
+                            <th class="text-right" data-sort="departure">
+
+                                <i class="caret private-show hidden-xs"></i>
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Departure" data-original-title="" title="">Departure</span>
+
+                            </th>
+                            <th class="text-center" data-sort="duration">
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Duration" data-original-title="" title="">Duration</span>
+                                <i class="caret private-show hidden-xs"></i>
+                            </th>
+                            <th class="hidden-sm hidden-xs selected" data-sort="score">
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Itinerary" data-original-title="" title="">Itinerary</span>
+                                <i class="caret private-show hidden-xs"></i>
+                            </th>
+                            <th class="price-alignment border-right" data-sort="price">
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Price" data-original-title="" title="">Price</span>
+                                <i class="caret private-show hidden-xs"></i>
+                            </th>
+                            <th class="hidden-sm hidden-xs button-alignment border-right"></th>
+                        </tr>
+                    </thead>
+                    <tbody v-if="listTrain" v-for="(train, i) in listTrain" v-bind:id="'parent' + train.ID">
+                        <tr v-bind:id="train.ID" data-toggle="collapse" v-on:click="loadScheduleDetail(i,train.ID)" v-bind:data-target="'#collapse_' + train.ID"
+                        class="result clickable_tr train vr direct">
+                            <td style="text-align: center; width: 158px;">
+                                <img src="https://booking.baolau.com/images/logos/transports/logo-vr.png" class="searchresult-logo">
+                                <div style="font-size: 13px;" v-text="train.Name"></div>
+                            </td>
+                            <td class="text-right" style="width: 187px;">
+                                <div class="super-bold">{{formatTime(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].StartTime)}}</div>
+                                <div>{{formatDate(getScheduleDetailByTrainID(train.ID)[0].DateDeparture)}}</div>
+                            </td>
+                            <!-- <td class="text-right" style="width: 154px;">
+                                <div class="super-bold">05:45</div>
+                                <div>Fr, 20/03</div>
+                            </td> -->
+                            <td class="text-center" style="width: 203px;">
+                                {{JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[0] + 'h ' + 
+                                parseInt(JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[1] * 0.6) + 'm'}} </td>
+                            <td class="searchresult-itenerary hidden-sm hidden-xs" style="width: 366px;"><span style="display: inline-block;">{{departure}}<br><span style="font-size: 13px;">{{departure}}</span></span> 
+                                <i class="icon have-node-code icon-train inline"></i> <span style="display: inline-block;">{{arrival}}<br><span style="font-size: 13px;">{{arrival}}</span></span>
+                            </td>
+                            <td class="total_price yellow-text super-bold price-alignment" style="width: 438px;">
+                                <span data-currency="VND" class="money" v-bind:id="'cost'+getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].ID">
+                                    {{getFirstCost(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].ID)}}</span> 
+                                    <i class="js-result_promo_tag fa fa-tag yellow-text" style="display: none;"></i>
+                                </td>
+                            <td class="text-right button-alignment" style="width: 133px;">
+                                <i class="fa button-direct hidden-xs hidden-sm " id="icon_1">
+                                    
+                                </i>
+                                <img src="../images/genaral/spinner-2.gif" style="width: 27px;" id="icon_2" hidden>
+                            </td>
+                        </tr>
+                        <tr v-bind:id="'collapse_' + train.ID" class="result-collapse collapse" style="position: relative;
+                                    height: 0;
+                                    overflow: hidden;
+                                    -webkit-transition-property: height, visibility;
+                                    transition-property: height, visibility;
+                                    -webkit-transition-duration: 0.35s;
+                                    transition-duration: 0.35s;
+                                    -webkit-transition-timing-function: ease;
+                                    transition-timing-function: ease;">
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+        <!-- Load more results button -->
+        <div class="gap gap-small">
+            <div id="loadingGif" style="display:none">
+                <img style="height:27px; width: 27px; display:block; margin:auto;" src="https://booking.baolau.com/images/genaral/spinner-2.gif">
+            </div>
+        </div>
+        <button id="btnLoadMore" class="btn full-width">Load more results</button>
+
+        <div id="loading_results" style="display:none">
+            <span>Please wait while we find the best routes for you.</span>
+        </div>
+
+        <div id="no_results" class="text-center" style="display:none">
+            <div class="gap gap-section"></div>
+            <img src="https://booking.baolau.com/images/genaral/no_result.svg">
+            <br>
+            <div class="gap gap-mini"></div>
+            <span class="big-text bold">
+            		We are sorry. No routes found for this date yet.            	</span>
+        </div>
+
+        <p id="results_disclaimer" style="padding-top: 30px; text-align: center; opacity: 1;">We obtained these fares directly from the transport providers. Please note that search results may differ from the actual timetables and prices at the time of booking, and that we are not responsible for delays in the services. For more information, read our <a class="external_link" href="https://booking.baolau.com/en/legal/#terms-of-use">Terms of Use</a>.</p>
+
+        <div id="map" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="padding: 0px; margin-top: 0px" class="modal-body">
+                        <button type="button" class="close" style="position: absolute; top:10px; right:15px; z-index: 1; color: #000; opacity: .8; font-size: 24px;" data-dismiss="modal" aria-label="Close">×</button>
+                        <div id="map_canvas">
+                            <div class="map"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <div id="transport-img" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gap gap-footer"></div>
+    </div>
+</div>
+<%}else{%>
+    <%- include('notfound')%>
+<%}%>
+<!-- FOOTER -->
+<%- include('footer')%>
+<!-- END FOOTER -->
+
+</div>
+<!-- END GLOBAL WRAP -->
+
+</div>
+<!-- END FILTER -->
+
+</div>
+<!-- END MAIN -->
+<%- include('scriptCommon', {page: 1})%>
+</body>
+</html>

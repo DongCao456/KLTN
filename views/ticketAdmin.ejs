@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin | Ticket</title>
+
+    <%- include('adminHeader'); -%>
+    <link href="../dist/vuejs-dialog.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/vuejs-dialog.min.js"></script>
+    <script type="text/javascript" src="../dist/vuejs-dialog-mixin.min.js"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0;
+            /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            /* Firefox */
+        }
+
+        .swal-ticket {
+            width: 900px !important;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <div id="sidebar">
+            <%- include('adminSidebar', {Staff : data}); -%>
+        </div>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper p-4">
+            <h3>Ticket</h3>
+            <div class="card-body pb-0">
+                <div id="app" class="card" style="padding: 15px;">
+                    <div class="row col-sm-12" style="padding-left: 38%;">
+                        <div class="d-flex flex-column">
+                            <div class="col">
+                                <label for="repreID">Input representative ID</label>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex flex-column">
+                                    <input id="repreID" type="number" class="form-control" placeholder="Input here...">
+                                    <small id="emailHelp" style="color:steelblue;" class="form-text">(Please input
+                                        the code sent to
+                                        the representative email)</small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button @click="SearchForTicket" class="btn btn-info"><i class="fa fa-search"></i>
+                                    Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <%- include('adminFooter'); -%>
+        </footer>
+    </div>
+    <!-- <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script> -->
+
+    <!-- ./wrapper -->
+    <!-- AdminLTE App -->
+
+    <!-- PAGE SCRIPTS -->
+    <script type="text/javascript" src="../dist/vuejs-dialog.min.js"></script>
+    <script type="text/javascript" src="../dist/vuejs-dialog-mixin.min.js"></script>
+    <script src="../dist/js/pages/dashboard2.js"></script>
+    <!-- Lastly add this package -->
+    <script src="../dist/vue.js"></script>
+    <script src="../dist/vue-router.js"></script>
+    <script src="../dist/axios.js"></script>
+
+    <script type="module" src="../dist/@TicketVue/ticketVue.js"></script>
+    <script src="../dist/sweetalert2.all.min.js"></script>
+    <script src="../dist/uuid.js"></script>
+    <script>
+
+    </script>
+    <script>
+        // Tell Vue to install the plugin.
+
+    </script>
+
+
+</body>
+
+</html>

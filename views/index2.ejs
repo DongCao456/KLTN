@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:20:55 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Baolau">
+
+    <title>Train Ticket Online VN | Home</title>
+    <meta name="description"
+        content="Information and ticket booking service for travelling in China, Vietnam, Cambodia, Laos, Thailand, Myanmar, Malaysia, Philippines and Indonesia. Find schedules and fares, book flights, trains, buses and ferries." />
+    <meta name="keywords"
+        content="flights, cheap flights, flights to hanoi, flights to bangkok, flights to saigon, book train ticket, book train ticket online, train to sapa, train to hanoi, train to saigon, train to bangkok, train to chiang mai, bus ticket, book bus ticket online, buy bus ticket online, bus ticket to hanoi, bus ticket to saigon" />
+
+    <base target="_top">
+
+
+    <!-- Libraries -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/bootstrap4562.css?mod=1">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-switch/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/lightgallery/lightgallery.css">
+    <link rel="stylesheet" type="text/css" href="../dist/baolau.min6ffc.css?v=2020-02-21">
+    <style>
+        #dateTimePicker_1 {
+            border: none !important;
+            width: 100%;
+            background-color: inherit !important;
+        }
+
+        #dateTimePicker_2 {
+            border: none !important;
+            width: 100%;
+            background-color: inherit !important;
+        }
+
+        .agile__dots {
+            bottom: 150px;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            right: 30px;
+            position: absolute;
+        }
+
+        .agile__dot {
+            margin: 5px 0;
+        }
+
+        .agile__dot button {
+            background-color: transparent;
+            border: 1px solid #fff;
+            cursor: pointer;
+            display: block;
+            height: 10px;
+            font-size: 0;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            width: 10px;
+        }
+
+        .agile__dot--current button,
+        .agile__dot:hover button {
+            background-color: #fff;
+        }
+
+        .slide {
+            display: block;
+            height: 500px;
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .carousel-item {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .carousel-item h1 {
+            color: white;
+        }
+
+        .caption {
+            position: relative;
+            left: 0;
+            bottom: 80px;
+            width: 100%;
+            padding: 10px 20px;
+            height: 100%;
+            background-color: rgba(170, 165, 165, 0.24);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            filter: alpha(opacity=70);
+            /* IE 5-7 */
+            -moz-opacity: 0.7;
+            /* Netscape */
+            -khtml-opacity: 0.7;
+            /* Safari 1.x */
+            opacity: 0.7;
+        }
+    </style>
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/js/jquery.min.js"></script>
+    <script src="../dist/vue-agile.js"></script>
+    <link rel="stylesheet" href="../dist/VueAgile.css">
+</head>
+
+<body class="" style="overflow: hidden;">
+
+
+    <div id="message" class="container-fluid" style="display:none">
+        <div class="close-message smaller-text" onclick="$('#message').slideUp('fast')"><i class="fa fa-times"></i>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 text-center">
+                <span class="message small-text"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_message" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="gap gap-super-small"></div>
+                    <div id="modal_message_title" style="letter-spacing: 3px; margin: -30px 0 35px;"
+                        class="refrigerator uppercase yellow-text super-big-text">
+
+                    </div>
+                    <div class="gap gap-small"></div>
+                    <div id="modal_message_text" style="letter-spacing: 1px; color: #f5f5f5"
+                        class="message big-text italic">
+
+                    </div>
+                </div><!-- /.modal-content -->
+                <div class="gap gap-super-small"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="waiting_overlay" style="display:block;background-color: lightgoldenrodyellow;">
+        <div class="container">
+            <h2 style="color: #fff; text-transform: uppercase;" id="waiting_text1" class="refrigerator"></h2>
+            <span id="waiting_text2" class="big-big-text"></span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="../images/genaral/244.gif" style="width:100px">
+        </div>
+    </div>
+
+    <!-- Sidebar Content -->
+
+    <%- include('section')%>
+    <!--End side-menu-left-->
+
+    <!---------------------------END Mobile Sidebar Content-------------------------------------->
+
+    <div id="menu_overlay"></div>
+
+    <div id="main_container">
+        <div class="filter">
+            <div class="global-wrap">
+                <%- include('sectionDesktop')%>
+                <div id="change">
+                    <div class="row">
+                        <!-- <div class="col-md-12 padding-0">
+                        <img src="../images/man_tourist_backpack_mountains_travel_114250_1366x768.jpg" />
+                    </div> -->
+                </div>
+                    </div>
+                    <div id="homepage">
+                        <div id="carousel" class="landing-banner--size js-landing-banner hidden-xs"
+                            style="height: 535px;">
+                            
+                                <div class="carousel-item">
+                                    <img class="slide" src="https://images.railyatri.in/assets/trains/header_background-274fdc43450c9f177484962df9cc3c78bbbfaa43983cc03c9ad74b41be61f66e.png" />
+                                    <h1 class="caption">TRAIN TICKET ONLINE VIETNAM</h1>
+                                </div>
+                                
+                            
+                        </div>
+                        <!-- SEARCH FORM  -->
+                        <div class="landing-banner__footer js-landing-banner__footer container">
+                            <div class="gap gap-medium-medium visible-xs"></div>
+
+                            <form id="search_form" action="#" method="get">
+
+                                <div class="gap gap-small widget-hide"></div>
+
+                                <!-- Hidden fields -->
+
+                                <input id="transports" name="transports" type="hidden" value="" />
+                                <!-- <input name="lang" type="hidden" value="en" /> -->
+
+
+                                <!-- Big row of Booking Process -->
+                                <div class="widget-container" id="app">
+                                    <div id="errors" class="modal fade">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <div class="gap gap-super-small"></div>
+                                                    <div style="letter-spacing: 3px; margin: -30px 0 35px;"
+                                                        class="refrigerator uppercase yellow-text super-big-text">
+                                                        Error </div>
+                                                    <div class="gap gap-small"></div>
+                                                    <div class="message" style="letter-spacing: 1px; color: #f5f5f5"
+                                                        class="message big-text italic">
+                                                        {{errors}}
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                                <div class="gap gap-super-small"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-7">
+                                            <div class="row">
+                                                <!-- WHERE Leaving From -->
+                                                <div class="col-md-5_5 col-xs-12">
+                                                    <template>
+                                                        <div class="form-group">
+                                                            <label>&nbsp;</label>
+                                                            <input v-model="FROM" @input="searchFromStation" id="Depart"
+                                                                name="origin" value="" class="typeahead form-control"
+                                                                tabindex="1" placeholder="From" type="text"
+                                                                autocomplete="off" />
+                                                            <input type="hidden" id="origin_id" name="origin_id"
+                                                                value="" v-model="departureStationID">
+                                                            <input type="hidden" id="origin_town" name="origin_town"
+                                                                value="">
+                                                            <input type="hidden" id="origin_town_lang"
+                                                                name="origin_town_lang" value="">
+                                                            <input type="hidden" id="origin_type" name="origin_type"
+                                                                value="">
+                                                            
+                                                            <div v-if="SearchFrom" style="align-items: center;">
+                                                                <ul style="z-index: 100;position: absolute;"
+                                                                    class="tt-menu">
+                                                                    <li v-for="station in SearchFrom"
+                                                                        v-text="station.Name"
+                                                                        v-on:click="selectStationFrom(station.Name)"
+                                                                        class="inner capitalize town TH tt-suggestion tt-selectable">
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                    </template>
+                                                </div>
+                                                <!-- END col-md-5_5 _LEAVING FROM -->
+
+                                                <!-- WHERE Going to -->
+                                                <div class="col-md-5_5 col-xs-12">
+                                                    <template>
+                                                        <div class="form-group">
+                                                            <label>&nbsp;</label>
+                                                            <input v-model="TO" @input="searchToStation" id="Arrival"
+                                                                name="destination" value="" tabindex="2"
+                                                                class="typeahead form-control" placeholder="To"
+                                                                type="text" autocomplete="off" />
+                                                            <input type="hidden" id="destination_id"
+                                                                name="destination_id" value=""
+                                                                v-model="arrivalStationID">
+                                                            <input type="hidden" id="destination_town"
+                                                                name="destination_town" value="">
+                                                            <input type="hidden" id="destination_town_lang"
+                                                                name="destination_town_lang" value="">
+                                                            <input type="hidden" id="destination_type"
+                                                                name="destination_type" value="">
+                                                            
+                                                            <div v-if="SearchTo" style="align-items: center;">
+                                                                <ul style="z-index: 99;position: absolute;"
+                                                                    class="tt-menu">
+                                                                    <li v-for="station in SearchTo"
+                                                                        v-text="station.Name"
+                                                                        v-on:click="selectStationTo(station.Name)"
+                                                                        class="inner capitalize town TH tt-suggestion tt-selectable">
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                    <!-- END form-group -->
+                                                </div>
+                                                <!-- END col-md-5_5 _GOING TO -->
+                                                <!-- END Row WHERE -->
+                                            </div>
+
+                                        <!-- BEGIN WHEN -->
+                                        <div class="input-daterange">
+                                            <!-- BEGIN Row WHEN -->
+                                            <div class="row">
+                                                <!-- WHEN Departing on -->
+                                                <template>
+                                                    <div class="col-md-5_5 col-xs-6">
+                                                        <div class="form-group">
+                                                            <label>&nbsp;</label>
+                                                            <vuejs-datepicker class="form-control" name="departure_date"
+                                                                id="dateTimePicker_1" v-model="depart_date" v-bind:disabled-dates="disabledDates_To">
+                                                            </vuejs-datepicker>
+                                                            <!-- <input id="departure_date" name="departure_date" tabindex="3" class="form-control" type="text" value="24/02/2020" readonly /> -->
+                                                            
+                                                    </div>
+                                                </template>
+                                                <!-- END col-md-5_5 _departing on -->
+
+                                                <template>
+                                                    <!-- WHEN Arriving on -->
+                                                    <div class="col-md-5_5 col-xs-6">
+                                                        <div id="return_group" class="form-group ">
+                                                            <label>&nbsp;</label>
+                                                            <vuejs-datepicker class="form-control" name="return_date"
+                                                                id="dateTimePicker_2" v-model="return_date" v-bind:disabled-dates="disabledDates_From">
+                                                            </vuejs-datepicker>
+                                                            <!-- <input id="return_date" name="return_date" tabindex="4" class="form-control" type="text" value="29/02/2020" readonly /> -->
+                                                            
+                                                        </div>
+                                                        <!-- END col-md-5_5 _arriving on -->
+                                                    </template>
+                                                    <!-- END Row WHEN -->
+                                                </div>
+                                            </div>
+                                            <!-- END input-daterange -->
+                                            <!-- END WHEN -->
+                                        </div>
+                                        <!-- END col-md-8_ WHERE & WHEN -->
+
+                                        <!-- BEGIN PASS & ROUND -->
+                                        <div class="col-lg-4 col-md-5 col-xs-12">
+                                            <div class="row">
+                                                <!-- Rountrip / One Way -->
+                                                <div class="col-xs-6 col-md-7">
+                                                    <div class="form-group">
+
+                                                        <label>&nbsp;</label>
+                                                        <ul class="nav nav-pills">
+                                                            <li class="active" >
+                                                                <a class="fa fa-exchange roundtrip_selector visible-xs"
+                                                                    href="#roundtrip_yes" data-toggle="tab" ></a>
+                                                                <!-- <a_roundtrip v-model="round_trip" v-on:click="enabledReturnDay()"></a_roundtrip> -->
+                                                                <a class="roundtrip_selector hidden-xs"
+                                                                    href="#roundtrip_yes" data-toggle="tab"
+                                                                    @click="enabledReturnDay()">Round trip</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="fa fa-long-arrow-right roundtrip_selector visible-xs"
+                                                                    href="#roundtrip_no" data-toggle="tab"></a>
+                                                                <!-- <a_oneway  v-model="one_way" @click="disabledReturnDay()" ></a_oneway> -->
+                                                                <a class="roundtrip_selector hidden-xs"
+                                                                    href="#roundtrip_no" data-toggle="tab"
+                                                                    @click="disabledReturnDay()">One
+                                                                    way</a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+
+                                                    <div style="display:none">
+                                                        <input id="roundtrip_yes" type="radio" name="roundtrip"
+                                                            value="yes" checked="checked" />
+                                                        <input id="roundtrip_no" type="radio" name="roundtrip"
+                                                            value="no" />
+                                                    </div>
+                                                </div>
+
+                                                <!-- Passengers -->
+                                                <div class="col-xs-6 col-md-7">
+                                                    <div class="form-group form-group-select-plus">
+                                                        <label>HÀNH KHÁCH
+                                                            <span style="background: none; cursor: pointer;"
+                                                                data-toggle="modal" data-target="#travel_with_child"
+                                                                data-whatever="@getbootstrap">(<i
+                                                                    class="icon-with-child"></i>)</span>
+                                                        </label>
+
+                                                        <div id="passenger_selector" class="input-group">
+                                                            <ul>
+                                                                <li><button type="button" class="btn-circle minus"
+                                                                        data-value="-1" data-target="#passengers_count"
+                                                                        data-toggle="spinner" style='background-color: #b3ccff;'>
+                                                                    </button></li>
+                                                                <li><input id="passengers_count" type="text" readonly
+                                                                        data-ride="spinner" name="passengers_count"
+                                                                        class="input-number text-center" value="1"
+                                                                        data-min="1" data-max="5" v-model="passengers">
+                                                                </li>
+                                                                <li><button type="button" class="btn-circle plus"
+                                                                        data-value="1" data-target="#passengers_count"
+                                                                        data-toggle="spinner" data-on="mousehold"
+                                                                        v-on:click="increasePassager()" style='background-color: #b3ccff;'></button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="search_button_container" class="col-xs-12 col-md-5 text-right">
+                                                    <label class="hidden-sm hidden-xs widget-hide">&nbsp;</label>
+                                                    <button id="searchButton"
+                                                        class="btn icon-search fixed-width green btn-block bold"
+                                                        type="button" name="input" value="Search"
+                                                        v-on:click="Search()">SEARCH</button>
+                                                </div>
+
+                                            </div>
+                                            <!-- END col-md-9 -->
+                                            <!-- END PASS & ROUND -->
+                                        </div>
+                                        <!-- END col-md-4_PASS & ROUND -->
+                                    </div>
+                                </div>
+                                <!-- END big row -->
+                            </form>
+
+                            <div class="gap gap-small visible-sm visible-xs"></div>
+
+                            <!-- Modal travel with child-->
+                            <div class="modal fade" id="travel_with_child" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="row">
+                                            <div class="container-popup">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">&times;</button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <div class="modal-title">TRAVEL WITH CHILDREN?</div>
+                                                    <span class="popup-form-line">
+                                                        Please select the number of passengers, including
+                                                        children.<br>Later
+                                                        on you will be able to specify the age and apply for children
+                                                        discount on selected transport providers. </span>
+                                                </div>
+                                                <div class="gap gap-small"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Modal children-->
+                            <div class="js-btn--srcolldown btn-next hidden-sm hidden-xs">
+                                <i class="fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+
+                        <!-- WELCOME -->
+                        <div style="padding-bottom: 50px;"
+                            class="panel-dark js-scrollto-section landing-section__intro text-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="gap gap-section"></div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <h2 class="refrigerator">Why Book TTOVN Train Tickets With Confirmtkt</h2>
+                                        <p class="landing-section__subtitle" style="color: #65696e">We make travel easy
+                                        </p>
+                                    </div>
+                                    <div class="gap gap-medium hidden-sm hidden-xs"></div>
+                                    <div class="gap gap-small hidden-lg hidden-md"></div>
+
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col-xs-12 col-md-6 feature-container">
+                                          <div class="col-xs-2 f-icon">
+                                            <img class="features-img img-responsive ls-is-cached lazyload" data-src="../images/icons/icons-cancel-100.png">
+                                          </div>
+                                          <div class="col-xs-10">
+                                            <h3>
+                                              Easy TTOVN ticket Cancellations &amp; Refund
+                                            </h3>
+                                            <br>
+                                            <p>
+                                              We give you one-click, hassle free TTOVN train ticket cancellation and refund. Desktop and mobile train
+                                              ticket booking in just few easy steps.
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 feature-container">
+                                          <div class="col-xs-2 f-icon">
+                                            <img class="features-img img-responsive ls-is-cached lazyload" data-src="../images/icons/discount-100.png">
+                                          </div>
+                                          <div class="col-xs-10">
+                                            <h3>
+                                              High Chances of getting confirm TTOVN tickets
+                                            </h3>
+                                            <br>
+                                            <p>
+                                              With our same train alternates and prediction feature, increase your chances of getting confirm TTOVN train
+                                              tickets
+                                            </p>
+                                          </div>
+                                        </div> 
+                                      </div>
+
+                                    <div class="gap gap-medium hidden-lg hidden-xs"></div>
+                                    <div class="row" style="margin: 0px;">
+                                        <div class="col-xs-12 col-md-6 feature-container">
+                                  
+                                          <div class="col-xs-2 f-icon">
+                                            <img class="features-img img-responsive ls-is-cached lazyload" data-src="../images/icons/security-checked-100.png">
+                                          </div>
+                                          <div class="col-xs-10">
+                                            <h3>
+                                              Secured Payment
+                                            </h3>
+                                            <br>
+                                            <p>
+                                              Payment on ConfirmTkt is highly secured. You can also make your TTOVN ticket payment with UPI, wallets
+                                              Paytm, PhonePe, and more.
+                                  
+                                            </p>
+                                          </div>
+                                        </div>
+                                  
+                                        <div class="col-xs-12 col-md-6 feature-container">
+                                          <div class="col-xs-2 f-icon">
+                                            <img class="features-img img-responsive ls-is-cached lazyload" data-src="../images/icons/customer-support-100.png">
+                                          </div>
+                                          <div class="col-xs-10">
+                                            <h3>
+                                              TTOVN booking and enquiry 24X7 Customer Support
+                                            </h3>
+                                            <br>
+                                            <p>
+                                              Superior customer service. For any IRCTC train enquiry and booking queries get in touch with our 24X7
+                                              dedicated support 08068243910
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gap gap-small "></div>
+
+                        <!-- TOP DESTINATION -->
+                        <div class="landing-section__destination panel-light" style='background-color: rgba(179, 255, 204, 0.87);'>
+                            
+                            <div class="row mt-4"> <div class="col-sm-4"> <img src="https://www.abhibus.com/trains/images/buy-tickets.png" alt="buy train tickets" class="img-fluid"> </div> <div class="col-sm-8"> <p>You can now book your train tickets on AbhiBus website and Mobile App. Booking IRCTC train tickets is an easy process with AbhiBus without any hassles.At AbhiBus website &amp; mobile app you can:</p> <ul> <li>Book trains for any destination, class or train type.</li> <li><a href="https://www.abhibus.com/trains/pnr-status">Check PNR status</a> of your ticket</li> <li>Find trains between stations, fares and seat availability of different classes in trains</li> <li>Check the schedule, <a href="https://www.abhibus.com/trains/route-info">route</a> and <a href="https://www.abhibus.com/trains/coach-info">coach position</a> of different trains</li> <li>Manage your ticket – download, cancel your tickets easily</li> </ul> <p>AbhiBus assures you a very easy booking with support for all payment modes.</p> </div> </div>
+                        </div>
+
+                        <div class="gap gap-small" ></div>
+
+
+                        <!-- FIND YOUR WAY -->
+                        <div class="landing-section__tab hidden-xs js-carto-scroll" style='background-color: #b3ccff;'>
+                            <div class="row mt-4"> <div class="col-sm-8"> <ul> <li>Visit www.AbhiBus.com/trains or open AbhiBus mobile app – android or iOS</li> <li>Select Source and Destination cities, Date of the journey, then click “Search” button</li> <li>Choose your train and check seat availability for the same</li> <li>Select seat class &amp; date that suits you the best</li> <li>Click on “Book” button and enter your IRCTC user ID (If you do not have a User Id then choose “Create IRCTC UserID” option or reset it by clicking on “Forgot IRCTC Password” button)</li> <li>Fill the requisite form and click “Book” button</li> <li>Now proceed for payment, Choose method of your preference i.e. Debit/Credit Card, Net banking or AbhiCash. All our payment means are secure and protected.</li> <li>You will be redirected to IRCTC to enter the password for the user ID entered earlier and confirm. You are done with it!”</li> </ul> <p>You will also receive an instant auto update of your payment and ticket through an e-mail &amp; message on your registered mobile numbers or email ids. So no need to carry hardcopy of your tickets. </p> <p class="mt-3">Now book train tickets at AbhiBus!</p> </div> <div class="col-sm-4"> <img src="https://www.abhibus.com/trains/images/ticket-bg.png" alt="How to book train tickets online" class="img-fluid"> </div> </div>
+                        </div>
+
+                        <!-- REVIEW -->
+                        
+                        </div>
+                        <div class=row>
+                            <div class=fl-content-full container>
+                        <div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5628eb46c3d66 fl-visible-desktop-medium" data-node="5628eb46c3d66"><div class="fl-row-content-wrap"><div class="fl-row-content fl-row-fixed-width fl-node-content"><div class="fl-col-group fl-node-5628eb46c3df5" data-node="5628eb46c3df5"><div class="fl-col fl-node-5628eb46c3e83" data-node="5628eb46c3e83"><div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5628eb46c3f0c" data-node="5628eb46c3f0c"><div class="fl-module-content fl-node-content"><div class="fl-rich-text"><p><noscript><img class="aligncenter size-full wp-image-583" src="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png" alt="cartebancaire" width="972" height="41" srcset="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png 972w, https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire-300x13.png 300w" sizes="(max-width: 972px) 100vw, 972px" /></noscript><img class="aligncenter size-full wp-image-583 lazyloaded" src="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png" data-src="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png" alt="cartebancaire" width="972" height="41" data-srcset="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png 972w, https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire-300x13.png 300w" data-sizes="(max-width: 972px) 100vw, 972px" sizes="(max-width: 972px) 100vw, 972px" srcset="https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire.png 972w, https://onlytrain-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/cartebancaire-300x13.png 300w"></p></div></div></div></div></div></div></div></div></div>
+                    </div>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- FOOTER -->
+                <%- include('footer')%>
+                <!-- END FOOTER -->
+
+            </div>
+            <!-- END GLOBAL WRAP -->
+
+        </div>
+        <!-- END FILTER -->
+
+    </div>
+    <!-- END MAIN -->
+
+
+
+    <!-- WINDOW POPUP -->
+
+    <!-- Modals-->
+
+
+    <!-- END WINDOW POPUP -->
+
+    <script src="../dist/vue.js"></script>
+    <script src="../dist/vue-router.js"></script>
+    <script src="../dist/axios.js"></script>
+
+    <script src="../dist/vuejs-datepickker.js"></script>
+    <script type="text/javascript" src="../dist/baolau.min6ffc.js?v=2020-02-21"></script>
+    <script type="module" src="../dist/indexVue.js"></script>
+    <script type="module" src="../dist/carousel.js"></script>
+    <script src="../dist/khong-dau/lib/khongdau.js"></script>
+    <script src="../dist/myDate.js"></script>
+    <script src="../dist/moment.js"></script>
+    <!-- Language dependant libraries -->
+    <script type="text/javascript" src="../vendor/bootstrap-datepicker/locales/bootstrap-datepicker.en.min.js"></script>
+
+</body>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:32:07 GMT -->
+
+</html>

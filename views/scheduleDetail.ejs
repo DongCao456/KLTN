@@ -1,0 +1,387 @@
+
+    
+    <td colspan="7" style="padding-top: 0px; padding-bottom: 0px; width: 161px;">
+        <div class="route_details" style="display: block;" data-transport="vr" data-vessel="<%=train.Name%>">
+            <!-- Details Desktop -->
+            <div style="color: #7a8085;" class="hidden-sm hidden-xs">
+                <table style="width:100%; padding:0;">
+                    <!-- Origin -->
+                    <tbody>
+                        <tr style="border:none">
+                            <td style="width: 161px; height: 94px;">&nbsp;</td>
+
+                            <td class="text-right" style="width: 190px;">
+                                <span class="blue-text super-bold"><%=moment(result[0].ScheduleDetails[0].StartTime).subtract(7,'hour').format('LT')%></span>
+                                <p><%=moment(result[0].DateDeparture).format('DD-MM-YYYY')%></p>
+                            </td>
+
+                            <td class="relative text-center" style="width: 163px;">
+                                <div class="searchresult-timeline">
+                                    <i class="icon-line-point inline line-bottom"></i>
+                                </div>
+                            </td>
+
+                            <td colspan="2" class="padded-left" style="width: 542px;">
+                                <!-- style="border-right:1px solid #ddd;" -->
+                                <h4 class="station-text bold">
+                                                <%=departureStation[0].Name%>                       
+                                </h4>
+                                <!-- <span>120 Lê Duẩn, Quận Hoàn Kiếm, Hà Nội</span> -->
+                            </td>
+                            <td colspan="2" rowspan="3" style="padding: 20px; width: 381px;">
+                                <div class="fares">
+                                    
+                                </div>
+                            </td>
+                            <!-- Fares -->
+                            <td colspan="2" rowspan="3" style="padding: 20px; width: 583px;">
+                                <div class="fares">
+                                    <div class="desktop-fares">
+                                        <%var index = 0%>
+                                        <%result[0].ScheduleDetails[0].TableCosts.forEach(function(cost){%>
+                                            <%if(typeof(ListSeatSold.get(cost.SeatTypeID)) != "undefined"){%>
+                                                <%if(dic.get(cost.SeatTypeID).TotalSeat - (ListSeatSold.get(cost.SeatTypeID).SeatSold + parseInt(PASSENGERS))> 0){%>
+                                                <div class="relative fares-choose-items" >
+                                                    <div class="fares-choose radio">
+                                                        <%if(index == 0){%>
+                                                            <input type="radio" id="cost_fare<%=index%><%=SCHEDULEDETAILID%>"
+                                                            name="cost<%=SCHEDULEDETAILID%>" 
+                                                            class="fare_radio"
+                                                            value="<%=cost.Cost%>"  checked>
+                                                            <label for="cost_fare<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                        <%}else {%>
+                                                            <input type="radio" id="cost_fare<%=index%><%=SCHEDULEDETAILID%>"
+                                                            name="cost<%=SCHEDULEDETAILID%>" 
+                                                            class="fare_radio"
+                                                            value="<%=cost.Cost%>"  
+                                                            >
+                                                            <label for="cost_fare<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                        <%}%>
+                                                    </div>
+
+                                                    <label class="fares-description">
+                                                    <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                                    <span class="yellow-text js-fare_price money">
+                                                        <%=JSON.stringify(cost.Cost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%>&nbsp;VND
+                                                    </span>                                               
+                                                    </label>
+                                                </div>
+                                                <%}else{%>
+                                                    <div class="relative fares-choose-items" >
+                                                        <div class="fares-choose radio">
+                                                            <%if(index == 0){%>
+                                                                <input type="radio" 
+                                                                name="cost" 
+                                                                class="fare_radio"
+                                                                disabled>
+                                                                <label ></label>
+                                                            <%}else {%>
+                                                                <input type="radio" 
+                                                                name="cost" 
+                                                                class="fare_radio"
+                                                                disabled>
+                                                                <label ></label>
+                                                            <%}%>
+                                                        </div>
+    
+                                                        <label class="fares-description">
+                                                        <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                                        <span class="red-text">
+                                                                Sold Out
+                                                        </span>                                               
+                                                        </label>
+                                                    </div>
+                                                <%}%>
+                                            <%}else{%>
+                                                <div class="relative fares-choose-items" >
+                                                    <div class="fares-choose radio">
+                                                        <%if(index == 0){%>
+                                                            <input type="radio" id="cost_fare_desktop<%=index%><%=SCHEDULEDETAILID%>"
+                                                            name="cost<%=SCHEDULEDETAILID%>" 
+                                                            class="fare_radio"
+                                                            value="<%=cost.Cost%>"  checked>
+                                                            <label for="cost_fare_desktop<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                        <%}else {%>
+                                                            <input type="radio" id="cost_fare_desktop<%=index%><%=SCHEDULEDETAILID%>"
+                                                            name="cost<%=SCHEDULEDETAILID%>" 
+                                                            class="fare_radio"
+                                                            value="<%=cost.Cost%>"  
+                                                            >
+                                                            <label for="cost_fare_desktop<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                        <%}%>
+                                                        <%index++%>
+                                                        
+                                                    </div>
+    
+                                                    <label class="fares-description">
+                                                    <%if(typeof(dic.get(cost.SeatTypeID)) != "undefined"){%>
+                                                    <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                                    <%}else{%>
+                                                        <p>Error</p>
+                                                    <%}%>
+                                                    <span class="yellow-text js-fare_price money">
+                                                        <%=JSON.stringify(cost.Cost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%>&nbsp;VND
+                                                    </span>                                               
+                                                    </label>
+                                                </div>
+                                            <%}%>
+                                            <%index++%>
+                                        <%});%>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <%var hour = parseInt(moment(result[0].TimeDeparture).subtract(7, 'hour').format('HH'))%>
+                        <%var min = parseInt(moment(result[0].TimeDeparture).format('mm'))%>
+                        
+                        <!-- Vessel -->
+                        <tr style="border:none">
+                            <td style="text-align: center; width: 161px; height: 94px;">
+                                <img class="searchresult-logo" src="https://booking.baolau.com/images/logos/transports/logo-vr.png">
+                                <div style="font-size: 13px"><%=train.Name%></div>
+                            </td>
+                            <td class="text-right" style="width: 190px;">
+                                <span>                           
+                                    <%var DateDepart = new Date(moment(result[0].DateDeparture).add(hour,'hour').add(min, 'minutes'))%>
+                                    <%var DateArrive = new Date(moment(result[0].DateDeparture).add(hour,'hour').add(result[0].ScheduleDetails[0].Time * 60 + min, 'minutes'))%>
+                                    <span class="bold"><%=new duration(DateDepart, DateArrive).toString("%Hs hour %M minutes")%></span>
+                                </span>
+                            </td>
+                            <td class="text-center" style="width: 163px;">
+                                <div class="searchresult-timeline">
+                                    <i class="icon-train inline"></i> </div>
+                            </td>
+                            <td colspan="2" class="padded-left" style="width: 542px;">
+                                <!-- style="border-right:1px solid #ddd; overflow:hidden"-->
+                                <!--<div class="side_point">
+                                                <span class="side_line">-->
+                                <span class="bold">Vietnam Railways</span> <%=train.Name%>
+                                <!--</span>
+                                        </div>-->
+                            </td>
+                        </tr>
+                        <!--  Destination -->
+                        <tr style="border:none">
+                            <td style="width: 161px; height: 94px;"></td>
+                            <td class="text-right" style="width: 190px;">
+                                <span class="blue-text super-bold"><%=moment(result[0].TimeDeparture).add(result[0].ScheduleDetails[0].Time * 60, 'minutes').subtract(7, "hour").format("LT")%></span>
+                                <p><%=moment(result[0].DateDeparture).add(result[0].ScheduleDetails[0].Time * 60 + min , 'minutes').add(hour,"hour").subtract(7, "hour").format("DD-MM-YYYY")%></p>
+                            </td>
+                            <td class="relative text-center" style="width: 163px;">
+                                <div class="searchresult-timeline">
+                                    <i class="icon-line-point inline line-top"></i>
+                                </div>
+                            </td>
+                            <td colspan="2" class="padded-left" style="width: 542px;">
+                                <h4 class="station-text bold">
+                                                <%=arrivalStation[0].Name%>                                           
+                                </h4>
+                                <!-- <span>01 Nguyễn Thông, Phường 9, Quận 3, Thành phố Hồ Chí Minh</span> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end Details -->
+            </div>
+            <!-- End Desktop details -->
+
+            <!-- Mobile details -->
+            <div class="mobile-result-content visible-xs visible-sm">
+                <div>
+                    <!-- Origin -->
+                    <div class="col-xs-4">
+                        <h4 class="station-text bold"><%=departureStation[0].Name%>  </h4>
+
+                                                              </span>
+                    </div>
+
+                    <div class="col-xs-4 text-center">
+                        <img class="searchresult-logo" src="https://booking.baolau.com/images/logos/transports/logo-vr.png">
+                        <div style="font-size: 13px"><%=train.Name%></div>
+                    </div>
+
+                    <div class="col-xs-4 text-right">
+                        <h4 class="station-text bold"><%=arrivalStation[0].Name%>  </h4>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class=" searchresult-timeline">
+                    <div class="col-xs-4 relative">
+                        <i class="icon-line-point inline line-right"></i>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <i class="icon-train inline"></i> </div>
+                    <div class="col-xs-4 text-right relative">
+                        <i class="icon-line-point inline line-left"></i>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div>
+                    <div class="col-xs-4">
+                        <span class="blue-text big-text bold"><%=moment(result[0].ScheduleDetails[0].StartTime).subtract(7,'hour').format('LT')%></span>
+                        <p><%=moment(result[0].DateDeparture).format('DD-MM-YYYY')%></p>
+                    </div>
+
+                    <div style="margin-top: 10px" class="col-xs-4 text-center">
+                        <span class="small-text"><%=new duration(DateDepart, DateArrive).toString("%Hs hour %M minutes")%></span>
+                    </div>
+
+                    <div class="col-xs-4 text-right">
+                        <span class="blue-text big-text bold"><%=moment(result[0].TimeDeparture).add(result[0].ScheduleDetails[0].Time * 60, 'minutes').subtract(7, "hour").format("LT")%></span>
+                        <p><%=moment(result[0].DateDeparture).add(result[0].ScheduleDetails[0].Time * 60 + min , 'minutes').add(hour,"hour").subtract(7, "hour").format("DD-MM-YYYY")%></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- Mobile Fares -->
+                <div class="col-xs-12 gap-small">
+                    <section class="scrolling-section">
+                        <div class="fare-content horizontal-items" style="width:516px">
+                            <div class="fares fare-type-items" data-route="66890155">
+                                <%var index = 0%>
+                                <%result[0].ScheduleDetails[0].TableCosts.forEach(function(cost){%>
+                                    <%if(typeof(ListSeatSold.get(cost.SeatTypeID)) != "undefined"){%>
+                                        <%if(dic.get(cost.SeatTypeID).TotalSeat - (ListSeatSold.get(cost.SeatTypeID).SeatSold + parseInt(PASSENGERS)) > 0){%>
+                                        <div class="relative fares-choose-items" >
+                                            <div class="fares-choose radio">
+                                                <%if(index == 0){%>
+                                                    <input type="radio" id="cost_fare<%=index%><%=SCHEDULEDETAILID%>"
+                                                    name="cost<%=SCHEDULEDETAILID%>" 
+                                                    class="fare_radio"
+                                                    value="<%=cost.Cost%>">
+                                                    <label for="cost_fare<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                <%}else {%>
+                                                    <input type="radio" id="cost_fare<%=index%><%=SCHEDULEDETAILID%>"
+                                                    name="cost<%=SCHEDULEDETAILID%>" 
+                                                    class="fare_radio"
+                                                    value="<%=cost.Cost%>"  
+                                                    >
+                                                    <label for="cost_fare<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                <%}%>
+                                            </div>
+
+                                            <label class="fares-description">
+                                            <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                            <span class="yellow-text js-fare_price money">
+                                                <%=JSON.stringify(cost.Cost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%>&nbsp;VND
+                                            </span>                                               
+                                            </label>
+                                        </div>
+                                        <%}else{%>
+                                            <div class="relative fares-choose-items" >
+                                                <div class="fares-choose radio">
+                                                    <%if(index == 0){%>
+                                                        <input type="radio" 
+                                                        name="cost" 
+                                                        class="fare_radio"
+                                                        disabled>
+                                                        <label ></label>
+                                                    <%}else {%>
+                                                        <input type="radio" 
+                                                        name="cost" 
+                                                        class="fare_radio"
+                                                        disabled>
+                                                        <label ></label>
+                                                    <%}%>
+                                                </div>
+
+                                                <label class="fares-description">
+                                                <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                                <span class="red-text">
+                                                        Sold Out
+                                                </span>                                               
+                                                </label>
+                                            </div>
+                                        <%}%>
+                                    <%}else{%>
+                                        <div class="relative fares-choose-items" >
+                                            <div class="fares-choose radio">
+                                                <%if(index == 0){%>
+                                                    <input type="radio" id="cost_fare_mobile<%=index%><%=SCHEDULEDETAILID%>"
+                                                    name="cost<%=SCHEDULEDETAILID%>" 
+                                                    class="fare_radio"
+                                                    value="<%=cost.Cost%>">
+                                                    <label style="text-align: left;" for="cost_fare_mobile<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                <%}else {%>
+                                                    <input type="radio" id="cost_fare_mobile<%=index%><%=SCHEDULEDETAILID%>"
+                                                    name="cost<%=SCHEDULEDETAILID%>" 
+                                                    class="fare_radio"
+                                                    value="<%=cost.Cost%>"  
+                                                    >
+                                                    <label style="text-align: left;" for="cost_fare_mobile<%=index%><%=SCHEDULEDETAILID%>" onclick="changeHref('<%=SCHEDULEDETAILID%>', '<%=cost.SeatTypeID%>')"></label>
+                                                <%}%>
+                                                <%index++%>
+                                                
+                                            </div>
+
+                                            <label class="fares-description">
+                                            <%if(typeof(dic.get(cost.SeatTypeID)) != "undefined"){%>
+                                            <p><%=dic.get(cost.SeatTypeID).SeatTypeName%></p>
+                                            <%}else{%>
+                                                <p>Error</p>
+                                            <%}%>
+                                            <span class="yellow-text js-fare_price money">
+                                                <%=JSON.stringify(cost.Cost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%>&nbsp;VND
+                                            </span>                                               
+                                            </label>
+                                        </div>
+                                    <%}%>
+                                    <%index++%>
+                                <%});%>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- end mobile fares -->
+            </div>
+            <!-- END mobile-result-content-->
+
+        </div>
+        <!-- route_details-->
+
+        <div class="clearfix"></div>
+
+        <!-- <div class="gap gap-small hidden-sm hidden-xs"></div> -->
+        <%if(typeof(STEP) == "undefined"){%>
+            <div style="padding:0px 15px;" class="searchresult-button">
+                <a class="btn full-width btn-select green" 
+                href="/passenger?ONE_WAY=<%=ONE_WAY%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>&costID=<%=result[0].ScheduleDetails[0].TableCosts[0].SeatTypeID%>"
+                target="_self" 
+                id="bookLink<%=SCHEDULEDETAILID%>"
+                data-href="/passenger?ONE_WAY=<%=ONE_WAY%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>">
+                    <span class="bold">BOOKING ONLINE</span>
+                </a>
+                
+            </div>
+        <%}else if(STEP == 1){%>
+            <div style="padding:0px 15px;" class="searchresult-button">
+                <a class="btn full-width btn-select green" 
+                href="/searchSchedule?ROUND_TRIP=<%=ROUND_TRIP%>&DepartureQuery=<%=JSON.stringify(DepartureQuery)%>&STEP=<%=STEP%>&RETURN=<%=RETURN%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>&costID=<%=result[0].ScheduleDetails[0].TableCosts[0].SeatTypeID%>"
+                target="_self" 
+                id="bookLink<%=SCHEDULEDETAILID%>"
+                data-href="/searchSchedule?ROUND_TRIP=<%=ROUND_TRIP%>&STEP=<%=STEP%>&RETURN=<%=RETURN%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>">
+                    <span class="bold">BOOKING ONLINE</span>
+                </a>
+                
+            </div>
+        <%}else{%>
+            <div style="padding:0px 15px;" class="searchresult-button">
+                <a class="btn full-width btn-select green" 
+                href="/passenger?ROUND_TRIP=<%=ROUND_TRIP%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>&costID=<%=result[0].ScheduleDetails[0].TableCosts[0].SeatTypeID%>"
+                target="_self" 
+                id="bookLink<%=SCHEDULEDETAILID%>"
+                data-href="/passenger?ROUND_TRIP=<%=ROUND_TRIP%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>">
+                    <span class="bold">BOOKING ONLINE</span>
+                </a>
+                
+            </div>
+        <%}%>   
+        <div class="gap gap-mini"></div>
+
+    </td>

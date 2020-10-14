@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:20:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Baolau">
+    
+    <title>Train Ticket Online VN | List Schedule</title>
+    <meta name="description" content="Information and ticket booking service for travelling in China, Vietnam, Cambodia, Laos, Thailand, Myanmar, Malaysia, Philippines and Indonesia. Find schedules and fares, book flights, trains, buses and ferries."/>
+    <meta name="keywords" content="flights, cheap flights, flights to hanoi, flights to bangkok, flights to saigon, book train ticket, book train ticket online, train to sapa, train to hanoi, train to saigon, train to bangkok, train to chiang mai, bus ticket, book bus ticket online, buy bus ticket online, bus ticket to hanoi, bus ticket to saigon"/>
+    
+    <base target="_top">
+
+
+	<!-- Libraries -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-switch/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/lightgallery/lightgallery.css">
+    <link rel="stylesheet" type="text/css" href="../dist/baolau.min6ffc.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/DataTables-1.10.21/css/jquery.dataTables.min.css"/>
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/js/jquery.min.js"></script>
+</head>
+
+<body>
+<!-- Sidebar Content -->
+<%- include('section')%>
+<!--End side-menu-left-->
+
+<!---------------------------END Mobile Sidebar Content-------------------------------------->
+<!-- <div id="waiting_overlay" style="display:block;background-color: lightgoldenrodyellow;">
+    <div class="container">
+        <h2 style="color: #fff; text-transform: uppercase;" id="waiting_text1" class="refrigerator"></h2>
+        <span id="waiting_text2" class="big-big-text"></span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="../images/genaral/244.gif" style="width:100px">
+    </div>
+</div> -->
+<div id="menu_overlay"></div>
+
+<div id="main_container" >
+<div id="app" class="filter">
+<div class="global-wrap">
+    <div id="waiting_overlay" style="display:block;background-color: lightgoldenrodyellow;">
+        <div class="container">
+            <h2 style="color: #fff; text-transform: uppercase;" id="waiting_text1" class="refrigerator"></h2>
+            <span id="waiting_text2" class="big-big-text"></span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="../images/genaral/244.gif" style="width:100px">
+        </div>
+    </div>
+    <%- include('sectionDesktop')%>
+
+<div  class="subpage">
+
+   
+
+    <div class="panel-dark">
+        <div class="container">
+            <div>
+                <div class="gap gap-section"></div>
+                <div class="gap gap-mini"></div>
+                <div class="bs-callout bs-callout-info"></div>
+
+                <!-- payment in cash office -->
+
+                <!-- Disclaimer Safe Sender List -->
+                <div class="gap gap-mini"></div>
+
+                <!-- Disclaimer Manage booking -->
+                <div class="gap gap-mini"></div>
+
+                <!-- Disclaimer Social media -->
+                <div class="gap gap-mini"></div>
+            </div>
+        </div>
+        
+        <div class="container hero-callout" >           
+            <div class="dataTables_wrapper">
+                <div class="bs-callout bs-callout-info">
+                    <div class="padded-content">
+                        <div class="highlight-text">LIST SCHEDULES</div>
+                        <table id="table_id">
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Date Departure</th>
+                                    <th>Departure Station</th>
+                                    <th>Destination Station</th>
+                                    <th>Time Departure</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                           <template v-if="listScheduleConverted">
+                            <tbody >                              
+                                <tr  v-for="schedule in listScheduleConverted">
+                                    <td>{{TrainName(schedule.TrainID)}}</td>
+                                    <td>{{FormatDate(schedule.DateDeparture)}}</td>
+                                    <td>{{ScheduleName(schedule.ScheduleDetails[0].DepartureStationID)}}</td>
+                                    <td>{{ScheduleName(schedule.ScheduleDetails[0].ArrivalStationID)}}</td>
+                                    <td>{{FormatTime(schedule.TimeDeparture)}}</td>
+                                    <td style="text-align: center;"><a v-bind:href="'/getAllScheduleDetailClient?ID='+schedule.ID" target="_blank" class="btn btn-default">Schedule Detail</a></td>
+                                </tr>                                   
+                            </tbody>
+                           </template>
+                        </table>
+                    </div>
+                </div>
+                
+               </div>
+               <div class="gap gap-section"></div>
+               <div class="gap gap-section"></div>
+               <div class="gap gap-section"></div>
+        </div>
+    </div>
+    
+</div>
+
+
+<!-- FOOTER -->
+<%- include('footer')%>
+<!-- END FOOTER -->
+
+</div>
+<!-- END GLOBAL WRAP -->
+
+</div>
+<!-- END FILTER -->
+
+</div>
+<!-- END MAIN -->
+
+
+
+<!-- WINDOW POPUP -->
+
+<!-- Modals-->
+
+
+<!-- END WINDOW POPUP -->
+
+    <script src="../dist/vue.js"></script>
+    <script src="../dist/axios.js"></script>
+    <!-- <script src="../dist/myVue5.js"></script>	 -->
+    <script type="text/javascript" src="../dist/baolau.min6ffc.js"></script>
+    <script type="text/javascript" src="../dist/listFareVue.js"></script>
+    <script type="text/javascript" src="../dist/js/jquery.dataTables.js"></script>   
+    
+    <script src="../dist/moment.js"></script>  
+</body>
+</html>

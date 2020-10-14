@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('adminHeader') %>
+  <title>Admin Dashboard</title>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <div>
+      <%- include('adminSidebar', {Staff: data}) %>
+    </div>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="app" class="content-wrapper">
+      <div class="card" style="background-color: #001f3f;color: white;">
+        <div class="card-header ui-sortable-handle" style="cursor: move;">
+          <h3 class="card-title">
+            <i class="fa fa-cart-plus"></i>&nbsp;
+            Sold tickets report (ticket(s))
+          </h3>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+          <div class="tab-content p-0">
+            <!-- Morris chart - Sales -->
+            <div class="flex" style="width: 50%;display: flex;">
+              <canvas id="lineChartTicket"></canvas>
+              <canvas id="pieChartTicket"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #001f3f;color: white;">
+        <div class="card-header ui-sortable-handle" style="cursor: move;">
+          <h3 class="card-title">
+            <i class="fas fa-dollar-sign"></i>&nbsp;
+            Revenue report (VND)
+          </h3>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+          <div class="tab-content p-0">
+            <!-- Morris chart - Sales -->
+            <div class="flex" style="width: 50%;display: flex;">
+              <canvas id="barPriceMonth"></canvas>
+              <canvas id="barPriceYear"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="list">
+        <div class="card-header border-transparent">
+          <h3 class="card-title">Sold ticket detail</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              View detail <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0" style="display: block;">
+          <div class="table-responsive">
+            <table id="TicketTable" class="table m-0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Customer</th>
+                  <th>Seat number</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Train</th>
+                  <th>From</th>
+                  <th>To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in Tickets">
+                  <td>{{item.ID}}</td>
+                  <td>{{item.Customer.Name}}</td>
+                  <td>{{item.Seat.SeatNumber}}</td>
+                  <td>{{item.Price}}</td>
+                  <td>{{formatDate(item.DepartureDate)}}</td>
+                  <td>{{formatTime(item.DepartureTime)}}</td>
+                  <td v-html="formatStatus(item.Status)">
+                  </td>
+                  <td>{{item.TrainName}}</td>
+                  <td>{{from(item.DepartureStationID)}}</td>
+                  <td>{{to(item.ArrivalStationID)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.table-responsive -->
+        </div>
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <%- include('adminFooter'); -%>
+    </footer>
+  </div>
+
+  <div>
+
+  </div> <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="../dist/js/pages/dashboard2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="../dist/vue.js"></script>
+  <script src="../dist/vue-router.js"></script>
+  <script src="../dist/axios.js"></script>
+  <script src="../dist/sweetalert2.all.min.js"></script>
+  <script src="../dist/moment.js"></script>
+  <script type="module" src="../dist/@AdminVue/adminVue.js"></script>
+
+  <script>
+
+    setTimeout(() => {
+      $('#list').CardWidget('toggle');
+    }, 50);
+  </script>
+
+  <!-- Language dependant libraries -->
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:20:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Baolau">
+    
+    <title>Train Ticket Online VN | Manage Booking</title>
+    <meta name="description" content="Information and ticket booking service for travelling in China, Vietnam, Cambodia, Laos, Thailand, Myanmar, Malaysia, Philippines and Indonesia. Find schedules and fares, book flights, trains, buses and ferries."/>
+    <meta name="keywords" content="flights, cheap flights, flights to hanoi, flights to bangkok, flights to saigon, book train ticket, book train ticket online, train to sapa, train to hanoi, train to saigon, train to bangkok, train to chiang mai, bus ticket, book bus ticket online, buy bus ticket online, bus ticket to hanoi, bus ticket to saigon"/>
+    
+    <base target="_top">
+
+
+	<!-- Libraries -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap-switch/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/owl-carousel2/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/lightgallery/lightgallery.css">
+    <link rel="stylesheet" type="text/css" href="../dist/baolau.min6ffc.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/js/jquery.min.js"></script>
+</head>
+
+<body style="overflow: hidden;">
+<!-- Sidebar Content -->
+
+<section class="left side-nav">
+    <button type="button" class="close visible-xs visible-sm">&times;</button>
+    <nav class="mobile-nav-links links">
+        <ul>
+            <li><a class="active" href="index.html">HOME</a></li>
+
+                            <li>
+                    <a href="destinations.html">Destinations</a>
+                </li>
+            
+            
+                            <li><a href="https://www.baolau.vn/en/manage" target="_blank">MANAGE BOOKING</a></li>
+            
+                            <li><a  href="agent.html">AGENT</a></li>
+                            <li><a  href="affiliate.html">AFFILIATE</a></li>
+                            <li><a  href="help.html">HELP</a></li>
+            
+            
+            <li style="margin-bottom: 40px"><a href="index.html#Contact_popup" data-toggle="modal">CONTACT US</a></li>
+
+            <!-- Mobile language -->
+                            <li class="visible-xs visible-sm">
+                    <a class="subnav" href="#"><div class="language-flag en"></div> English</a>
+                    <ul>
+                                                                                                            <li><a href="../es/index.html"><div class="language-flag es"></div> Español</a></li>
+                                                                               <li><a href="../fr/index.html"><div class="language-flag fr"></div> Français</a></li>
+                                                                               <li><a href="../vi/index.html"><div class="language-flag vi"></div> Tiếng Việt</a></li>
+                                                                                                                                                                                               <li><a href="../th/index.html"><div class="language-flag th"></div> ไทย</a></li>
+                                           </ul>
+                </li>
+            
+            <!-- Mobile currency -->
+                     </ul>
+    </nav>
+</section><!--End side-menu-left-->
+
+<!---------------------------END Mobile Sidebar Content-------------------------------------->
+<div id="waiting_overlay" style="display:block;background-color: lightgoldenrodyellow;">
+    <div class="container">
+        <h2 style="color: #fff; text-transform: uppercase;" id="waiting_text1" class="refrigerator"></h2>
+        <span id="waiting_text2" class="big-big-text"></span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="../images/genaral/244.gif" style="width:100px">
+    </div>
+</div>
+<div id="menu_overlay"></div>
+<div id="confirm" class="modal fade">
+        
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body text-center">
+               <div class="gap gap-super-small"></div>
+                <div style="letter-spacing: 3px; margin: -30px 0 35px;" class="refrigerator uppercase yellow-text super-big-text">
+                    Confirm                    </div>
+                <div class="gap gap-small"></div>
+                <div class="message" style="letter-spacing: 1px; color: #f5f5f5" class="message big-text italic">
+                    Are you sure you want to cancel this ticket ?
+                </div>
+                <div style="margin-top: 10px;">
+                    <button class="btn btn-default" style="background-color: red;" onclick="CancelTicket()">Yes</button>
+                    <button class="btn btn-default" onclick="ClearData()">No</button>
+                </div>
+            </div><!-- /.modal-content -->
+            
+            <div class="gap gap-super-small"></div>
+            <div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main_container" >
+<div class="filter">
+<div class="global-wrap">
+<header id="main-header" class="header">
+    <div class="header-bar" >
+        <!-- Mobile Menu -->
+        <div class="row mobile-header hidden-lg hidden-md">
+            <div class="container">
+                
+                                <a class="mobile-logo" href="index.html" target="_top">
+                    <!-- <img src="../images/logos/baolau/logo_color.svg" /> -->
+                </a>
+                
+                
+                
+                                    <a class="btn-user pull-left" href="#login_popup" data-toggle="modal">
+                        <img src="../images/avatars/profile-yellow.png"/>
+                    </a>
+                
+                                    <a class="btn-menu pull-right" href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                             </div>
+        </div>
+                  <!-- DESKTOP MANAGE BOOKING -->
+                                    <div style="padding: 0 25px;" class="sidebar-menu-style pull-right hidden-sm hidden-xs">
+                        <a href="https://www.baolau.vn/en/manage" target="_blank">
+                            <i style="padding-right: 5px" class="fa fa-file-text" aria-hidden="true"></i>
+                            Manage booking                        </a>
+                    </div>
+                <!-- DESKTOP DESTINATIONS -->
+                                    <div style="padding: 0 25px;" class="sidebar-menu-style pull-right hidden-sm hidden-xs">                        
+                        <a href="destinations.html">
+                        	<i style="padding-right: 5px" class="fa fa-map-signs" aria-hidden="true"></i> 
+                        	Destinations                        </a>
+                    </div>
+                            </div><!-- sidebar-menu -->
+            </div><!-- END sub-header -->
+</header>
+
+<div id="app" class="subpage">
+    <div class="panel-dark">
+        <div class="container">
+            <div>
+                <div class="gap gap-section"></div>
+                <div class="bs-callout bs-callout-info">
+                    <div class="padded-content">
+                        <div class="highlight-text">YOUR BOOKING</div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">BOOKING CODE:</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span class="blue-text super-bold"><%=result.ID%></span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">EMAIL:</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span class="bold"><%=result.Email%></span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">BOOKING DATE:</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span><%=result.DateBooking%></span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">TOTAL COST:</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span><%=JSON.stringify(result.TotalCost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%> VND</span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">PASSPORT:</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span><%=result.Passport%></span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
+                                <span class="bold">STATUS BOOKING: </span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
+                                <span style="color: #81b900;">COMPLETE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclaimer payment info -->
+
+                <div class="gap gap-mini"></div>
+                <div class="bs-callout bs-callout-info"></div>
+
+                <!-- payment in cash office -->
+
+                <!-- Disclaimer Safe Sender List -->
+                <div class="gap gap-mini"></div>
+
+                <!-- Disclaimer Manage booking -->
+                <div class="gap gap-mini"></div>
+
+                <!-- Disclaimer Social media -->
+                <div class="gap gap-mini"></div>
+            </div>
+        </div>
+        
+        <div class="container hero-callout" >           
+            <div class="dataTables_wrapper">
+                <div class="bs-callout bs-callout-info">
+                    <div class="padded-content">
+                        <div class="highlight-text">LIST PASSENGERS</div>
+                        <table id="table_id">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Type Object</th>
+                                    <th>PASSPORT</th>
+                                    <th>DEPARTURE</th>
+                                    <th>DESTINATION</th>
+                                    <th>AMOUNT OF MONEY</th>
+                                    <th>STATUS</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%var index = 0%>
+                                <%for(var i = 0; i < result.Customers.length; i++){%>
+                                    <%for(var j = 0; j < result.Customers[i].Tickets.length;j++){%>
+                                        <tr>
+                                            <td><%=result.Customers[i].Name%></td>
+                                            <td name="TypeObjectID" data-id="<%=result.Customers[i].TypeObjectID%>"><%=result.Customers[i].TypeObjectID%></td>
+                                            <td><%=result.Customers[i].Passport%></td>
+                                            <td name="DepartureStationID" data-id="<%=result.Customers[i].Tickets[j].DepartureStationID%>"><%=result.Customers[i].Tickets[j].DepartureStationID%></td>
+                                            <td name="ArrivalStationID" data-id="<%=result.Customers[i].Tickets[j].ArrivalStationID%>"><%=result.Customers[i].Tickets[j].ArrivalStationID%></td>
+                                            <td><%=JSON.stringify(result.Customers[i].Tickets[j].Price).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%> VND%></td>
+                                            <td name="StatusTicket" data-status="<%=result.Customers[i].Tickets[j].Status%>"><%=result.Customers[i].Tickets[j].Status%></td>
+                                            <%if(result.Customers[i].Tickets[j].Status == 1 && (moment(Date) - moment(result.Customers[i].Tickets[j].DepartureDate)) < 86400000){%>
+                                            <td id="parent<%=index%>" style="text-align: center;">
+                                                <input style="background-color: red;" type="button" value="Cancel" class="btn btn-danger" name="btnCancel" onclick="Cancel(this, '<%=result.Customers[i].Tickets[j].ID%>', '<%=index%>')"/>
+                                            </td>
+                                            <%index++%>
+                                            <%}else{%>
+                                                <td></td>
+                                            <%}%>
+                                        </tr>
+                                        
+                                    <%}%>
+                                <%}%>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+               </div>
+               <div class="gap gap-section"></div>
+        </div>
+    </div>
+    
+</div>
+
+
+<!-- FOOTER -->
+<%- include('footer')%>
+<!-- END FOOTER -->
+
+</div>
+<!-- END GLOBAL WRAP -->
+
+</div>
+<!-- END FILTER -->
+
+</div>
+<!-- END MAIN -->
+
+
+
+<!-- WINDOW POPUP -->
+
+<!-- Modals-->
+
+
+<!-- END WINDOW POPUP -->
+
+    <%- include('scriptCommon', {page:5})%>
+    
+    
+</body>
+
+<!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:32:07 GMT -->
+</html>
