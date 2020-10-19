@@ -15,6 +15,7 @@ Sequelize.DATE.prototype._stringify = function _stringify(date, options) {
 // })
 
 // database local
+//test thu github
 var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
