@@ -19,7 +19,7 @@ Sequelize.DATE.prototype._stringify = function _stringify(date, options) {
 var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
-    port: '49992',
+    port: '1434',
     //port: '57031'
 })
 
