@@ -10,8 +10,8 @@ Sequelize.DATE.prototype._stringify = function _stringify(date, options) {
 // var sequelize = new Sequelize('db_a63781_phantuantai12', 'phantuantai12', '79495291Z*z', {
 //     dialect: 'mssql',
 //     host: 'sql.freeasphost.net',
-//     //port: '1433',
-//     //port: '57031'
+//     port: '1434',
+//     port: '57031'
 // })
 
 // database local
@@ -20,14 +20,14 @@ var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
     port: '1434',
-    //port: '57031'
+ 
 })
 
-//  database cloud sql5059.site4now.net
-// var sequelize = new Sequelize('DB_A63781_phantuantai12', 'DB_A63781_phantuantai12_admin', '79495291Z*z', {
-//     dialect: 'mssql',
-//     host: 'sql5050.site4now.net',
-// })
+//Check port SQL
+// USE master
+// GO
+// xp_readerrorlog 0, 1, N'Server is listening on' 
+// GO
 
 //1 Train Entity
 class Train extends Model { }
