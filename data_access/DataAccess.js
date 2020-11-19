@@ -5,24 +5,12 @@ Sequelize.DATE.prototype._stringify = function _stringify(date, options) {
     //date = this._applyTimezone(date, options);
     return moment(date).format('YYYY-MM-DD');
 };
-
-// database cloud sql.freeasphost.net
-// var sequelize = new Sequelize('db_a63781_phantuantai12', 'phantuantai12', '79495291Z*z', {
-//     dialect: 'mssql',
-//     host: 'sql.freeasphost.net',
-//     port: '1434',
-//     port: '57031'
-// })
-
 // database local
 //test thu github
 var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
-    port:'49992'
-    //port: '1434',
-    
- 
+    port: '1433'
 })
 
 //Check port SQL
