@@ -196,14 +196,27 @@
                     </div>
                     <div id="homepage">
                         <div id="carousel" class="landing-banner--size js-landing-banner hidden-xs"
-                            style="height: 535px;">
-                            
+                            style="height: 500px;">
+                            <agile :nav-buttons="true" :autoplay-speed="5000" :speed="2500" fade="fade"
+                            pause-on-hover="pause-on-hover" pause-on-dots-hover="pause-on-dots-hover"
+                            autoplay="autoplay">  
                                 <div class="carousel-item">
-                                    <img class="slide" src="https://images.railyatri.in/assets/trains/header_background-274fdc43450c9f177484962df9cc3c78bbbfaa43983cc03c9ad74b41be61f66e.png" />
-                                    <h1 class="caption">TRAIN TICKET ONLINE VIETNAM</h1>
+                                    <img class="slide" img src="../images/trainbg.jpg"> 
+                                    <h1 class="caption">MUA VÉ TÀU TRỰC TUYẾN</h1>
                                 </div>
-                                
-                            
+                                <div class="carousel-item">
+                                    <img class="slide" src="../images/slide1.jpg"/>
+                                    <h1 class="caption">MUA VÉ TÀU TRỰC TUYẾN</h1>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="slide" src="../images/slide2.jpg"/>
+                                    <h1 class="caption">MUA VÉ TÀU TRỰC TUYẾN</h1>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="slide" src="../images/slide3.jpg"/>
+                                    <h1 class="caption">MUA VÉ TÀU TRỰC TUYẾN</h1>
+                                </div>
+                            </agile>                           
                         </div>
                         <!-- SEARCH FORM  -->
                         <div class="landing-banner__footer js-landing-banner__footer container">
@@ -251,10 +264,10 @@
                                                 <div class="col-md-5_5 col-xs-12">
                                                     <template>
                                                         <div class="form-group">
-                                                            <label>&nbsp;</label>
+                                                            <label>GA ĐI</label>
                                                             <input v-model="FROM" @input="searchFromStation" id="Depart"
                                                                 name="origin" value="" class="typeahead form-control"
-                                                                tabindex="1" placeholder="From" type="text"
+                                                                tabindex="1" placeholder="Ga đi" type="text"
                                                                 autocomplete="off" />
                                                             <input type="hidden" id="origin_id" name="origin_id"
                                                                 value="" v-model="departureStationID">
@@ -285,10 +298,10 @@
                                                 <div class="col-md-5_5 col-xs-12">
                                                     <template>
                                                         <div class="form-group">
-                                                            <label>&nbsp;</label>
+                                                            <label>GA ĐẾN</label>
                                                             <input v-model="TO" @input="searchToStation" id="Arrival"
                                                                 name="destination" value="" tabindex="2"
-                                                                class="typeahead form-control" placeholder="To"
+                                                                class="typeahead form-control" placeholder="Ga đến"
                                                                 type="text" autocomplete="off" />
                                                             <input type="hidden" id="destination_id"
                                                                 name="destination_id" value=""
@@ -326,7 +339,7 @@
                                                 <template>
                                                     <div class="col-md-5_5 col-xs-6">
                                                         <div class="form-group">
-                                                            <label>&nbsp;</label>
+                                                            <label>NGÀY ĐI</label>
                                                             <vuejs-datepicker class="form-control" name="departure_date"
                                                                 id="dateTimePicker_1" v-model="depart_date" v-bind:disabled-dates="disabledDates_To">
                                                             </vuejs-datepicker>
@@ -340,7 +353,7 @@
                                                     <!-- WHEN Arriving on -->
                                                     <div class="col-md-5_5 col-xs-6">
                                                         <div id="return_group" class="form-group ">
-                                                            <label>&nbsp;</label>
+                                                            <label>NGÀY VỀ</label>
                                                             <vuejs-datepicker class="form-control" name="return_date"
                                                                 id="dateTimePicker_2" v-model="return_date" v-bind:disabled-dates="disabledDates_From">
                                                             </vuejs-datepicker>
@@ -364,7 +377,7 @@
                                                 <div class="col-xs-6 col-md-7">
                                                     <div class="form-group">
 
-                                                        <label>&nbsp;</label>
+                                                        <label>VÉ</label>
                                                         <ul class="nav nav-pills">
                                                             <li class="active" >
                                                                 <a class="fa fa-exchange roundtrip_selector visible-xs"
@@ -372,7 +385,7 @@
                                                                 <!-- <a_roundtrip v-model="round_trip" v-on:click="enabledReturnDay()"></a_roundtrip> -->
                                                                 <a class="roundtrip_selector hidden-xs"
                                                                     href="#roundtrip_yes" data-toggle="tab"
-                                                                    @click="enabledReturnDay()">Round trip</a>
+                                                                    @click="enabledReturnDay()">Khứ Hồi</a>
                                                             </li>
                                                             <li>
                                                                 <a class="fa fa-long-arrow-right roundtrip_selector visible-xs"
@@ -380,8 +393,7 @@
                                                                 <!-- <a_oneway  v-model="one_way" @click="disabledReturnDay()" ></a_oneway> -->
                                                                 <a class="roundtrip_selector hidden-xs"
                                                                     href="#roundtrip_no" data-toggle="tab"
-                                                                    @click="disabledReturnDay()">One
-                                                                    way</a>
+                                                                    @click="disabledReturnDay()">Một Chiều</a>
                                                             </li>
                                                         </ul>
 
@@ -398,7 +410,7 @@
                                                 <!-- Passengers -->
                                                 <div class="col-xs-6 col-md-7">
                                                     <div class="form-group form-group-select-plus">
-                                                        <label>HÀNH KHÁCH
+                                                        <label>SỐ HÀNH KHÁCH
                                                             <span style="background: none; cursor: pointer;"
                                                                 data-toggle="modal" data-target="#travel_with_child"
                                                                 data-whatever="@getbootstrap">(<i
@@ -469,10 +481,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- END Modal children-->
-                            <div class="js-btn--srcolldown btn-next hidden-sm hidden-xs">
-                                <i class="fa-chevron-down"></i>
-                            </div>
+                            <!-- END Modal children-->                           
                         </div>
 
 
