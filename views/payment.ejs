@@ -143,19 +143,19 @@
                 <div class="progress-bar-holder hidden-sm hidden-xs">
                     <ul class="progressbar small-text bold">
                         <li class="active">
-                            <a v-bind:href="hrefDeparture">DEPARTURE</a>
+                            <a v-bind:href="hrefDeparture">KHỞI HÀNH</a>
                             <em class="progress-bar-arrow "></em>
                         </li>
                         <li class="active">
-                            <a v-bind:href="hrefPassengers">PASSENGERS</a>
+                            <a v-bind:href="hrefPassengers">HÀNH KHÁCH</a>
                             <em class="progress-bar-arrow "></em>
                         </li>
                         <li class="current">
-                            <span>PAYMENT</span>
+                            <span>THANH TOÁN</span>
                             <em class="progress-bar-arrow "></em>
                         </li>
                         <li class="">
-                            <span>CONFIRMATION</span>
+                            <span>XÁC NHẬN</span>
                             <em class="progress-bar-arrow "></em>
                         </li>
                     </ul>
@@ -174,7 +174,7 @@
     
                     <div class="col-xs-8 col-sm-6">
                         <div class="current bold">
-                            <span>Payment</span>
+                            <span>THANH TOÁN</span>
                         </div>
                     </div>
     
@@ -193,9 +193,9 @@
                     <div id="payment_info" class="row">
                         <div class="col-xs-12">
                             <div class="gap gap-title">
-                                <h1 class="special">Payment</h1>
+                                <h1 class="special">THANH TOÁN</h1>
                                 <div class="horizontal-devider hidden-sm hidden-xs"></div>
-                                <p class="big-text">Please, select your payment method and confirm the total amount to complete your ticket reservation.</p>
+                                <p class="big-text">Vui lòng chọn phương thức thanh toán của bạn và xác nhận tổng số tiền để hoàn tất việc đặt vé của bạn.</p>
                             </div>
                             <div class="gap gap-mini"></div>
     
@@ -232,8 +232,8 @@
                                             </div>
                                             <div id="collapse_payment_onepay" class="panel-collapse payment_radio_collapse_panel collapse in" aria-expanded="true" style="">
                                                 <div class="padded-content">
-                                                    <p>Pay with credit or debit card Visa, MasterCard, JCB, UnionPay, etc. </p>
-                                                    <p>Processing fee applies.</p>
+                                                    <p>Thanh toán bằng thẻ tín dụng hoặc thẻ ghi nợ Visa, MasterCard, JCB, UnionPay,... </p>
+                                                    <p>Phí xử lý được áp dụng.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -331,7 +331,7 @@
     
                             <div class="gap gap-section"></div>
                             <div class="gap gap-title">
-                                <h2>Price breakdown</h2>
+                                <h2>TỔNG TIỀN</h2>
                                 <div class="horizontal-devider hidden-sm hidden-xs"></div>
                             </div>
     
@@ -397,7 +397,7 @@
                                         <div class="row">
                                             <div class="col-md-offset-6 col-md-6 col-xs-12 view-total-price-items">
                                                 <div class="col-xs-5 bold">
-                                                    Passenger Quantity </div>
+                                                    Số lượng hành khách</div>
                                                 <div class="col-xs-2 text-right">
                                                     
                                                 </div>
@@ -465,7 +465,7 @@
                                     <div class="row">
                                         <div class="col-md-offset-6 col-md-6 col-xs-12 view-total-price-items">
                                             <div class="col-xs-5 bold">
-                                                Passenger Quantity </div>
+                                                Số lượng hành khách </div>
                                             <div class="col-xs-2 text-right">
                                                 
                                             </div>
@@ -490,7 +490,7 @@
                                     <div class="row">
                                         <div class="col-md-offset-6 col-md-6 col-xs-12 view-total-price-items">
                                             <div class="col-xs-5 uppercase super-bold">
-                                                Total </div>
+                                                Tổng </div>
                                             <div class="col-xs-offset-2 col-xs-5 text-right super-bold yellow-text">
                                                 <span id="total_booking" class="money"><%=JSON.stringify(Representative.TotalCost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%>&nbsp;đ</span>
                                             </div>
@@ -510,7 +510,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="gap gap-title">
-                                <h2>Terms and conditions of booking</h2>
+                                <h2>Điều khoản và điều kiện đặt chỗ</h2>
                                 <div class="horizontal-devider hidden-sm hidden-xs"></div>
                             </div>
                             <div class="panel-light">
@@ -885,7 +885,7 @@
                                 <div class="padded-heading">
                                     <div class="checkbox inline">
                                         <input id="check-confirm-termofuse" class="payment_checkbox" type="checkbox" name="check-confirm-termofuse" value="check-confirm-termofuse">
-                                        <label class="inline" for="check-confirm-termofuse">I confirm that I have read and accept the <a href="https://booking.baolau.com/en/legal/#terms-of-use" class="external_link bold" target="_blank">Terms of Use</a> and understand the <a href="https://booking.baolau.com/en/legal/#privacy-policy" class="external_link bold" target="_blank">Privacy Policy</a> </label>
+                                        <label class="inline" for="check-confirm-termofuse">Tôi xác nhận rằng tôi đã đọc và chấp nhận <a href="https://booking.baolau.com/en/legal/#terms-of-use" class="external_link bold" target="_blank">Điều Khoản Sử Dụng</a> và hiểu <a href="https://booking.baolau.com/en/legal/#privacy-policy" class="external_link bold" target="_blank">Chính sách bảo mật</a> </label>
                                     </div>
                                 </div>
                             </div>
@@ -897,7 +897,7 @@
                         <div class="padded-heading">
                             <div class="checkbox inline">
                                 <input id="check-confirm-cancellation" class="payment_checkbox" type="checkbox" name="check-confirm-cancellation">
-                                <label class="inline" for="check-confirm-cancellation">I confirm that the information I provide is correct and I understand that once the booking request is submitted any change or cancellation may incur additional fees</label>
+                                <label class="inline" for="check-confirm-cancellation">Tôi xác nhận rằng thông tin tôi cung cấp là chính xác và tôi hiểu rằng sau khi yêu cầu đặt phòng được gửi, bất kỳ thay đổi hoặc hủy bỏ nào có thể phải chịu thêm phí</label>
                             </div>
                         </div>
                     </div>
@@ -905,8 +905,8 @@
                     <div class="gap gap-small"></div>
     
                     <input type="hidden" name="submitting" value="submitting">
-    
-                    <a id="submit_payment" class="btn green full-width" style="cursor: pointer;" v-on:click="Redirect()">Proceed to payment</a>
+                    
+                    <a id="submit_payment" class="btn green full-width" style="cursor: pointer;" >Tiến Hành Thanh Toán</a>
     
                     <input type="hidden" name="stripeSource" value="">
     
@@ -944,3 +944,4 @@
 
 <!-- Mirrored from booking.baolau.com/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 14:32:07 GMT -->
 </html>
+<!-- v-on:click="Redirect()" -->

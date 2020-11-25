@@ -7,20 +7,20 @@
                 <th class="text-right" data-sort="departure">
 
                     <i class="caret private-show hidden-xs"></i>
-                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Departure" data-original-title="" title="">Departure</span>
+                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Departure" data-original-title="" title="">Khởi hành</span>
 
                 </th>
                 
                 <th class="text-center" data-sort="duration">
-                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Duration" data-original-title="" title="">Duration</span>
+                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Duration" data-original-title="" title="">Thời gian</span>
                     <i class="caret private-show hidden-xs"></i>
                 </th>
                 <th class="hidden-sm hidden-xs selected" data-sort="score">
-                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Itinerary" data-original-title="" title="">Itinerary</span>
+                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Itinerary" data-original-title="" title="">Hành trình</span>
                     <i class="caret private-show hidden-xs"></i>
                 </th>
                 <th class="price-alignment border-right" data-sort="price">
-                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Price" data-original-title="" title="">Price</span>
+                    <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Price" data-original-title="" title="">Giá</span>
                     <i class="caret private-show hidden-xs"></i>
                 </th>
                 <th class="hidden-sm hidden-xs button-alignment border-right"></th>
@@ -48,7 +48,7 @@
                         </td>
                         
                         <td class="text-center">
-                            <%=new duration(DateDepart, DateArrive).toString("%Hs hour %M minutes")%></td>
+                            <%=new duration(DateDepart, DateArrive).toString("%Hs giờ %M phút")%></td>
                         <td class="searchresult-itenerary hidden-sm hidden-xs">
                             <span style="display:inline-block" >
                                 <span >{{Depart1}}</span><br>
@@ -137,7 +137,7 @@
                                                 </td>
                                                 <td class="text-right">
                                                     
-                                    <span class="bold"><%=new duration(DateDepart, DateArrive).toString("%Hs hour %M minutes")%></span>
+                                    <span class="bold"><%=new duration(DateDepart, DateArrive).toString("%Hs giờ %M phút")%></span>
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="searchresult-timeline">
