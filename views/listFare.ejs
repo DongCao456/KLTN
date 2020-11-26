@@ -101,15 +101,15 @@
             <div class="dataTables_wrapper">
                 <div class="bs-callout bs-callout-info">
                     <div class="padded-content">
-                        <div class="highlight-text">LIST SCHEDULES</div>
+                        <div class="highlight-text">Danh Sách Lịch Trình</div>
                         <table id="table_id">
                             <thead>
                                 <tr>
-                                    <th>Train Name</th>
-                                    <th>Date Departure</th>
-                                    <th>Departure Station</th>
-                                    <th>Destination Station</th>
-                                    <th>Time Departure</th>
+                                    <th>Tên Tàu</th>
+                                    <th>Ngày đi</th>
+                                    <th>Ga đi</th>
+                                    <th>Ga đến</th>
+                                    <th>Giờ đi</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -121,7 +121,7 @@
                                     <td>{{ScheduleName(schedule.ScheduleDetails[0].DepartureStationID)}}</td>
                                     <td>{{ScheduleName(schedule.ScheduleDetails[0].ArrivalStationID)}}</td>
                                     <td>{{FormatTime(schedule.TimeDeparture)}}</td>
-                                    <td style="text-align: center;"><a v-bind:href="'/getAllScheduleDetailClient?ID='+schedule.ID" target="_blank" class="btn btn-default">Schedule Detail</a></td>
+                                    <td style="text-align: center;"><a v-bind:href="'/getAllScheduleDetailClient?ID='+schedule.ID" target="_blank" class="btn btn-default">Chi Tiết Lịch Trình</a></td>
                                 </tr>                                   
                             </tbody>
                            </template>

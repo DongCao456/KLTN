@@ -86,7 +86,7 @@
             <div class="dataTables_wrapper">
                 <div class="bs-callout bs-callout-info">
                     <div class="padded-content">
-                        <div class="highlight-text">SEAT TYPE</div>
+                        <div class="highlight-text">Loại Ghế</div>
                         <div class="btn-group bootstrap-select">
                             <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="&amp;nbsp;—&amp;nbsp;">
                                 <span class="filter-option pull-left" id="typeSelected">
@@ -134,17 +134,17 @@
             <div class="dataTables_wrapper">
                 <div class="bs-callout bs-callout-info">
                     <div class="padded-content">
-                        <div class="highlight-text">LIST SCHEDULE DETAIL</div>
+                        <div class="highlight-text">Danh Sách Chi Tiết Lịch Trình</div>
                         <table id="table_id">
                             <thead>
                                 <tr>
-                                    <th>Departure Station</th>
-                                    <th>Destination Station</th>
-                                    <th>Length (Kilometer)</th>
-                                    <th>Date Departure</th>
-                                    <th>Start Time</th>
-                                    <th>Price (VND)</th>
-                                    <th>Number of Passengers</th>
+                                    <th>Ga đi</th>
+                                    <th>Ga đến</th>
+                                    <th>Khoảng cách (Km)</th>
+                                    <th>Ngày đi</th>
+                                    <th>Giờ đi</th>
+                                    <th>Giá (VND)</th>
+                                    <th>Số lượng hành khách</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -159,7 +159,7 @@
                                     <td style="font-weight: bolder;">{{JSON.stringify(scheduleDetail.TableCosts[0].Cost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</td>
                                     <td><input type="number" value="1" min="1" max="5" v-bind:id="'scheduleDetail' + (index + 1)" class="form-control" style="text-align: center;border-color: black;" v-on:click="increasePassager('scheduleDetail' + (index + 1))" @keyup="increasePassager('scheduleDetail' + (index + 1))"></td>
                                     <td>
-                                        <a v-bind:href="'/searchSchedule?FROM=' + scheduleDetail.DepartureStationID + '&TO=' + scheduleDetail.ArrivalStationID + '&DEPART='+ GetDateDepartureQuery(scheduleDetail.StartTime, scheduleDetail.DepartureStationID) + '&ONE_WAY=true&PASSENGERS=1'"  v-bind:data-href="'/searchSchedule?FROM=' + scheduleDetail.DepartureStationID + '&TO=' + scheduleDetail.ArrivalStationID + '&DEPART='+ GetDateDepartureQuery(scheduleDetail.StartTime, scheduleDetail.DepartureStationID) + '&ONE_WAY=true&PASSENGERS='" class="form-control btn btn-primary" style="background-color: green;color: white;" id="bookingOnline">Booking Online</a></td>
+                                        <a v-bind:href="'/searchSchedule?FROM=' + scheduleDetail.DepartureStationID + '&TO=' + scheduleDetail.ArrivalStationID + '&DEPART='+ GetDateDepartureQuery(scheduleDetail.StartTime, scheduleDetail.DepartureStationID) + '&ONE_WAY=true&PASSENGERS=1'"  v-bind:data-href="'/searchSchedule?FROM=' + scheduleDetail.DepartureStationID + '&TO=' + scheduleDetail.ArrivalStationID + '&DEPART='+ GetDateDepartureQuery(scheduleDetail.StartTime, scheduleDetail.DepartureStationID) + '&ONE_WAY=true&PASSENGERS='" class="form-control btn btn-primary" style="background-color: green;color: white;" id="bookingOnline">ĐẶT VÉ TRỰC TUYẾN</a></td>
                                 </tr>                                   
                             </tbody>
                            </template>

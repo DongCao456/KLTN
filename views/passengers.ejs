@@ -133,11 +133,11 @@
                 <input hidden type="text" value="1" id="indexIti">
             <div class="col-xs-8 col-sm-6">
                 <div class="current bold">
-                    <span>Departure</span>
+                    <span>KHỞI HÀNH</span>
                 </div>
                 <%if(typeof(ROUND_TRIP) != "undefined"){%>
                     <div class="current bold">
-                        <span>Return</span>
+                        <span>TRỞ VỀ</span>
                     </div>
                 <%}%>
             </div>
@@ -194,7 +194,7 @@
     
                     <div class="col-xs-8 col-sm-6">
                         <div class="current bold">
-                            <span>Passengers</span>
+                            <span>HÀNH KHÁCH</span>
                         </div>
                     </div>
     
@@ -326,7 +326,7 @@
                     <!-- Passenger details -->
                     <div class="gap gap-section"></div>
                     <div class="gap gap-title">
-                        <h2>Nhập thông tin hành khách</h2>
+                        <h2>NHẬP THÔNG TIN HÀNH KHÁCH</h2>
                         <div class="horizontal-devider hidden-sm hidden-xs"></div>
                         <div class="gap gap-small"></div>
                         <!-- <p class="big-text">
@@ -377,7 +377,7 @@
                     <!-- Seat selection -->
                     <div class="gap gap-section"></div>
                     <div class="gap gap-title">
-                        <h2>Seat selection</h2>
+                        <h2>CHỌN GHẾ</h2>
                         <div class="horizontal-devider hidden-sm hidden-xs"></div>
                         <div class="gap gap-small"></div>
                     </div>
@@ -386,7 +386,7 @@
                     <%if(typeof(result2) != "undefined" && result2 != null){%>
                         <div>
                             <p class="big-text seat-gap">
-                                Please select your preferred seats for the itinerary from <span class="blue-text super-bold">{{Depart2}}</span> to <span class="blue-text super-bold">{{Arrival2}}</span> on <span class="bold"><%=moment(result2.DateDeparture).format('DD-MM-YYYY')%></span>.
+                                Vui lòng chọn chỗ ngồi của bạn cho hành trình từ <span class="blue-text super-bold">{{Depart2}}</span> to <span class="blue-text super-bold">{{Arrival2}}</span> on <span class="bold"><%=moment(result2.DateDeparture).format('DD-MM-YYYY')%></span>.
                             </p>
                             <div class="gap gap-mini"></div>
                             <div class="panel-light">
@@ -488,7 +488,7 @@
                     <%}%>
                     <div>
                         <p class="big-text seat-gap">
-                            Please select your preferred seats for the itinerary from <span class="blue-text super-bold">{{Depart1}}</span> to <span class="blue-text super-bold">{{Arrival1}}</span> on <span class="bold"><%=moment(result.DateDeparture).format('DD-MM-YYYY')%></span>.
+                            Vui lòng chọn chỗ ngồi của bạn cho hành trình từ <span class="blue-text super-bold">{{Depart1}}</span> đến <span class="blue-text super-bold">{{Arrival1}}</span> vào <span class="bold"><%=moment(result.DateDeparture).format('DD-MM-YYYY')%></span>.
                         </p>
                         <div class="gap gap-mini"></div>
                         <div class="panel-light">
@@ -584,13 +584,16 @@
                         <br>
                     </div>
                     
-                    <div class="bs-callout bs-callout-info">
+                    <!-- <div class="bs-callout bs-callout-info">
                         <div class="padded-heading">
                             <div class="bold">
                                 <img style="margin-right: 5px" class="avatar_baolau" src="https://booking.baolau.com/images/icons/avatar-baolau.png"> Seat position not guaranteed</div>
-                            <div class="italic" style="padding-top: 10px;">Please note that the position of the seats is just for reference. The railway operator may change the orientation of the carriage at the departure station anytime at their convenience. We hope you understand that this situation escapes our control and we cannot guarantee that the position of your seat will be the same as you select here.</div>
+                            <div class="italic" style="padding-top: 10px;">Xin lưu ý rằng vị trí của chỗ ngồi chỉ mang tính chất tham khảo. Người điều hành đường sắt có thể thay đổi hướng của toa tàu tại ga khởi hành bất cứ lúc nào nếu thuận tiện. Chúng tôi hy vọng bạn hiểu rằng tình huống này nằm ngoài tầm kiểm soát của chúng tôi và chúng tôi không thể đảm bảo rằng vị trí chỗ ngồi của bạn sẽ giống như bạn đã chọn ở đây.</div>
                         </div>
-                    </div>
+                    </div> -->
+                    
+                        
+                    
                     <!-- END Seat selection -->
     
                     <!-- Seat preference -->
@@ -603,7 +606,7 @@
                         <h2>Thông tin liên lạc</h2>
                         <div class="horizontal-devider hidden-sm hidden-xs"></div>
                         <div class="gap gap-small"></div>
-                        <p class="big-text">Please provide the contact details of the person responsible for booking. We will send the ticket confirmation to the email address provided.</p>
+                        <p class="big-text">Vui lòng cung cấp thông tin liên hệ của người chịu trách nhiệm đặt vé. Chúng tôi sẽ gửi email xác nhận đến địa chỉ đã cung cấp.</p>
                     </div>
     
                     <div class="passenger-contact-info panel-light">
@@ -654,7 +657,7 @@
                     <div class="gap gap-small"></div>
     
                     <input type="hidden" name="submit" value="submit">
-                    <button type="button" class="btn green full-width" v-on:click="submitForm()">CONTINUE</button>
+                    <button type="button" class="btn green full-width" v-on:click="submitForm()">TIẾP TỤC</button>
     
                     <div class="gap gap-footer"></div>
     
