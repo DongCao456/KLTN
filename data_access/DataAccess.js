@@ -10,7 +10,7 @@ Sequelize.DATE.prototype._stringify = function _stringify(date, options) {
 var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
-    port: '1433'
+    port: '49992'
 })
 
 //Check port SQL
