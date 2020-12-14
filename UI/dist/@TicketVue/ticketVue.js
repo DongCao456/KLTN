@@ -14,7 +14,7 @@ new Vue({
                 this.Tickets = res.data;
             })
         await axios.get(window.origin + '/getAllSta').then(res => {
-            this.Staions = res.data;
+            this.Stations = res.data;
         })
         await axios.get(window.origin + '/getAllCarriage').then(res => {
             this.Carr = res.data;
@@ -23,7 +23,7 @@ new Vue({
     },
     data: {
         Tickets: null,
-        Staions: null,
+        Stations: null,
         Carr: null
 
     },
@@ -96,8 +96,8 @@ new Vue({
                                                 <td>${new Date(e.DepartureDate).toLocaleDateString("vi-VN")}</td>
                                                 <td>${new Date(e.DepartureTime).toLocaleTimeString()}</td>
                                                 <td>${e.TrainName}</td>
-                                                <td>${this.Staions.find(x => x.ID == e.DepartureStationID).Name}</td>
-                                                <td>${this.Staions.find(x => x.ID == e.ArrivalStationID).Name}</td>
+                                                <td>${this.Stations.find(x => x.ID == e.DepartureStationID).Name}</td>
+                                                <td>${this.Stations.find(x => x.ID == e.ArrivalStationID).Name}</td>
                                                 </tr>` )}
                                     </tbody>
                                 </table>
@@ -333,7 +333,7 @@ new Vue({
                     </section>
                     <section class="card-cont">
                         <p style="font-size:1em;">${t.Customer.Name}</p>
-                        <h3>${this.Staions.find(x => x.ID == t.DepartureStationID).Name} to ${this.Staions.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
+                        <h3>${this.Stations.find(x => x.ID == t.DepartureStationID).Name} to ${this.Stations.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
                     <div class="even-date">
                         <i class="fa fa-calendar"></i>
                         <time>

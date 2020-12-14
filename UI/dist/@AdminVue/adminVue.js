@@ -177,7 +177,7 @@ new Vue({
                 },
                 title: {
                     display: true,
-                    text: 'Sole ticket status',
+                    text: 'Sold ticket status',
                     fontColor: 'white'
                 }
             }

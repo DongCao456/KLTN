@@ -1,5 +1,5 @@
-module.exports.UserName = "trainticketonlinevn@gmail.com";
-module.exports.Password = "79495291Z*z";
+module.exports.UserName = "lehoang4598@gmail.com";
+module.exports.Password = "451998/Lh";
 
 module.exports.firebaseConfig =  {
     apiKey: "AIzaSyAji9PEi6sRHVql6v-SkDDMtx-QJ3_U_6k",
