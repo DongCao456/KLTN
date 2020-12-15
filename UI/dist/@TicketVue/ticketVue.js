@@ -322,7 +322,7 @@ new Vue({
                 }
             </style><body><section class="ticket"> 
             `);
-            var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var months = ['Tháng Một', 'Tháng Hai', 'Tháng Ba', 'Tháng Tư', 'Tháng Năm', 'Tháng Sáu', 'Tháng Bảy', 'Tháng Tám', 'Tháng Chín', 'Tháng Mười', 'Tháng Mười Một', 'Tháng Mười Hai'];
             newWin.document.write(`${arr.map(t => {
                 newWin.document.write(`<div class="row">
                     <article class="card fl-left" style="">
@@ -333,7 +333,7 @@ new Vue({
                     </section>
                     <section class="card-cont">
                         <p style="font-size:1em;">${t.Customer.Name}</p>
-                        <h3>${this.Stations.find(x => x.ID == t.DepartureStationID).Name} to ${this.Stations.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
+                        <h3>${this.Stations.find(x => x.ID == t.DepartureStationID).Name} đi ${this.Stations.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
                     <div class="even-date">
                         <i class="fa fa-calendar"></i>
                         <time>

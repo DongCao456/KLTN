@@ -137,7 +137,7 @@ new Vue({
                 },
                 title: {
                     display: true,
-                    text: 'Sold ticket by month',
+                    text: 'Sold tickets by month',
                     fontColor: 'white'
                 }
             }

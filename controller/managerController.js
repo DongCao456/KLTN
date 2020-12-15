@@ -19,10 +19,10 @@ function SendMail(mail, id, from, to) {
   console.log(mail);
   console.log(from + " " + to);
   var mailOptions = {
-    from: 'trainticketonlinevn@gmail.com',
+    from: 'lehoang4598@gmail.com',
     to: mail,
-    subject: 'Cancel ticket confirmation',
-    html: `<p>Ticket <strong style="color:red;">${id}</strong> from <strong style="color:red;">${from}</strong> to <strong style="color:red;">${to}</strong> has canceled according to request from you.</p>`
+    subject: 'Xác nhận huỷ vé',
+    html: `<p>Vé có mã <strong style="color:red;">${id}</strong> từ <strong style="color:red;">${from}</strong> đến <strong style="color:red;">${to}</strong> đã được huỷ theo yêu cầu của quý khách.</p>`
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
