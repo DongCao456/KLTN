@@ -1195,13 +1195,13 @@ function convertTypeObjectToDictionary(object) {
 async function createTableListCustomer(Representative, ListPassenger, ListTicket, PaymentID){
     return new Promise(async resolve => {
         var html = "<!DOCTYPE html> <html> <head> <style> table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%; } td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; } tr:nth-child(even) { background-color: #dddddd; } </style> </head>";
-        var bookingInformation = "<body><h1>THANK YOU FOR BOOKING WITH US</h1><h2>Booking Information</h2><div>";
-        bookingInformation += "<div><p>Full Name: " + Representative.Name + "</p>" +
-        "<p>Booking Code: "  + Representative.ID + "</p>"
-        + "<p>Payment ID: " + PaymentID + "</p>"
-        + "<p>Passport: " + Representative.Passport + "</p>"
-        + "<p style='color:red;'>Note: <span style='font-weight:bold'>PAYMENT ID</span> used to refund money in case of error</p></div>";
-        var listCustomer = "<h2>List Customer</h2> <table> <tr><th>Ticket ID</th> <th>Full Name</th> <th>Passport</th> <th>Departure Station</th> <th>Destination Station</th> <th>Price (VND)</th></tr>";
+        var bookingInformation = "<body><h1>CẢM ƠN QUÝ KHÁCH ĐÃ SỬ DỤNG DỊCH VỤ CỦA CHÚNG TÔI</h1><h2>Thông tin đặt vé</h2><div>";
+        bookingInformation += "<div><p>Họ & tên: " + Representative.Name + "</p>" +
+        "<p>Mã đặt vé: "  + Representative.ID + "</p>"
+        + "<p>Mã thanh toán: " + PaymentID + "</p>"
+        + "<p>Passport/CMND: " + Representative.Passport + "</p>"
+        + "<p style='color:red;'>Ghi chú: <span style='font-weight:bold'>Mã thanh toán</span> được dùng để hoàn tiền trong trường hợp hệ thống xảy ra lỗi.</p></div>";
+        var listCustomer = "<h2>Danh sách vé</h2> <table> <tr><th>Mã vé</th> <th>Họ & tên</th> <th>Passport/CMND</th> <th>Ga đi</th> <th>Ga đến</th> <th>Giá vé (VND)</th></tr>";
         var DepartureStation = await getStationByID(ListTicket[0].DepartureStationID);
         var DestinationStation = await getStationByID(ListTicket[0].ArrivalStationID);
         ListPassenger.forEach((passenger,index,array) => {
