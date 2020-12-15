@@ -33,10 +33,10 @@ var vm = new Vue({
         station: null,
         typeObject: null,
         status: {
-            1: "NOT PRINT",
-            2: "PRINTED",
-            3: "CANCEL",
-            4: "WAITING CANCEL"
+            1: "CHƯA IN",
+            2: "ĐÃ IN",
+            3: "HUỶ",
+            4: "CHỜ HUỶ"
         },
         tempData: null
     },

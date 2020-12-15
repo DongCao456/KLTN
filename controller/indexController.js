@@ -653,9 +653,9 @@ module.exports.RedirectToNganLuong = function (req, res) {
 
 function SendMail(email ,html, option){
     var mailOptions = {
-        from: 'trainticketonlinevn@gmail.com',
+        from: 'lehoang4598@gmail.com',
         to: email,
-        subject: 'Thank you for booking at our website (' + option + ')',
+        subject: 'Cảm ơn quý khách đã đặt vé tại website của chúng tôi (' + option + ')',
         html: html
     };
     transporter.sendMail(mailOptions, (error,info) => {
@@ -686,11 +686,11 @@ module.exports.InsertData = async function (req, res, listBlock) {
     console.log("req.query:" + JSON.stringify(req.query));
     var ListTicket2;
     var html2;
-    var option = "One Way";
+    var option = "Một Chiều";
     if (typeof(req.cookies.data5) != "undefined") {
         ListTicket2 = req.cookies.data5;     
         html2 = await createTableListCustomer(Representative, ListPassenger, ListTicket2, req.query.payment_id);
-        option = "Round Trip";
+        option = "Khứ Hồi";
         SendMail(Representative.Email, html2, option)
         await unblockSeat(ListTicket2, listBlock);
     }

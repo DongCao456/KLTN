@@ -98,14 +98,14 @@
             <div class="modal-body text-center">
                <div class="gap gap-super-small"></div>
                 <div style="letter-spacing: 3px; margin: -30px 0 35px;" class="refrigerator uppercase yellow-text super-big-text">
-                    Confirm                    </div>
+                    XÁC NHẬN                    </div>
                 <div class="gap gap-small"></div>
                 <div class="message" style="letter-spacing: 1px; color: #f5f5f5" class="message big-text italic">
-                    Are you sure you want to cancel this ticket ?
+                    Quý khách có muốn huỷ vé này?
                 </div>
                 <div style="margin-top: 10px;">
-                    <button class="btn btn-default" style="background-color: red;" onclick="CancelTicket()">Yes</button>
-                    <button class="btn btn-default" onclick="ClearData()">No</button>
+                    <button class="btn btn-default" style="background-color: red;" onclick="CancelTicket()">Có</button>
+                    <button class="btn btn-default" onclick="ClearData()">Không</button>
                 </div>
             </div><!-- /.modal-content -->
             
@@ -238,7 +238,7 @@
             <div class="dataTables_wrapper">
                 <div class="bs-callout bs-callout-info">
                     <div class="padded-content">
-                        <div class="highlight-text">LIST PASSENGERS</div>
+                        <div class="highlight-text">DANH SÁCH HÀNH KHÁCH</div>
                         <table id="table_id">
                             <thead>
                                 <tr>
@@ -266,7 +266,7 @@
                                             <td name="StatusTicket" data-status="<%=result.Customers[i].Tickets[j].Status%>"><%=result.Customers[i].Tickets[j].Status%></td>
                                             <%if(result.Customers[i].Tickets[j].Status == 1 && (moment(Date) - moment(result.Customers[i].Tickets[j].DepartureDate)) < 86400000){%>
                                             <td id="parent<%=index%>" style="text-align: center;">
-                                                <input style="background-color: red;" type="button" value="Cancel" class="btn btn-danger" name="btnCancel" onclick="Cancel(this, '<%=result.Customers[i].Tickets[j].ID%>', '<%=index%>')"/>
+                                                <input style="background-color: red;" type="button" value="Huỷ" class="btn btn-danger" name="btnCancel" onclick="Cancel(this, '<%=result.Customers[i].Tickets[j].ID%>', '<%=index%>')"/>
                                             </td>
                                             <%index++%>
                                             <%}else{%>
