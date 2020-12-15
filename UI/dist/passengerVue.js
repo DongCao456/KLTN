@@ -639,24 +639,24 @@ var vm = new Vue({
 
         validatePassenger: function(firstName, lastName, passport,typeobject, index){
             if(typeobject == "") {
-                this.error = "Please choose type object for passenger " + index;
+                this.error = "Hãy chọn loại hành khách " + index;
                 return false;
             }
 
             if(lastName.trim() == "") {
-                this.error = "Please enter last name for passenger " + index;
+                this.error = "Hãy nhập họ tên của hành khách  " + index;
                 return false;
             }
 
             if(firstName.trim() == "") {
-                this.error = "Please enter first & middle name for passenger " + index;
+                this.error = "Hãy nhập họ tên của hành khách" + index;
                 return false;
             }
             
             var regex = /^\d{9,11}$/;
 
             if(!regex.test(passport)) {
-                this.error = "Please enter passport for passenger " + index + " (9 to 11 number character)"
+                this.error = "Hãy nhập số hộ chiếu hoặc số CMND của hành khách " + index + " (9 đến 11 số)"
                 return false;
             }
 
@@ -666,15 +666,15 @@ var vm = new Vue({
             var regex = /^\d{9,11}$/;
             var regex2 = /^\d{10,11}$/;
             if(Representative.FullName.trim() == "" ){
-                this.error = "Please enter name for representative";
+                this.error = "Hãy nhập tên người đại diện";
                 return false;
             }
             if(!regex.test(Representative.Passport)){
-                this.error = "Please enter passport for representative (9 to 11 number character)";
+                this.error = "Hãy nhập mã số hộ chiếu của người đại diện (9 to 11 number character)";
                 return false;
             }
             if(Representative.Email.trim() == ""){
-                this.error = "Please enter email for representative";
+                this.error = "Hãy nhập địa chỉ email của người đại diện";
                 return false;
             }
             var verify_email = document.getElementById('verify_email').value;
@@ -683,7 +683,7 @@ var vm = new Vue({
                 return false;
             }
             if(!regex2.test(Representative.Phone)){
-                this.error = "Please enter phone number for representative";
+                this.error = "Hãy nhập số điện thoại người đại diện";
                 return false;
             }
             
@@ -692,13 +692,13 @@ var vm = new Vue({
         checkSeat: function(){
             
             if(this.listSelected.length < this.numberPass.length) {
-                this.error = "Please choose seat for passenger";
+                this.error = "Hãy chọn ghế cho hành khách";
                 return false;
             }
 
             if(typeof(this.result2)  != "undefined" && this.result2 != null){
                 if(this.listSelected2.length < this.numberPass.length) {
-                    this.error = "Please choose seat for passenger";
+                    this.error = "Hãy chọn ghế cho hành khách";
                     return false;
                 }
            }
@@ -707,7 +707,7 @@ var vm = new Vue({
         },
         validatePasport: function(beforePassport, afterPassport) {
             if(beforePassport == afterPassport) {
-                this.error = "Passport can't duplicate";
+                this.error = "Mã sô hộ chiếu không được trùng";
                 return false;
             }
             return true;

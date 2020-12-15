@@ -106,33 +106,33 @@ new Vue({
     validateData: function(){
       //return true;
       if(document.getElementById('Depart').value == "" ){
-        this.errors = "Please enter departure station";
+        this.errors = "Hãy nhập ga đi";
         return false;
       }
       if(this.departureStationID == null) {
         if(!this.setDataDepart()){
-          this.errors = "Departure station invalid";
+          this.errors = "Ga đi không được để trống";
           return false;
         }       
       }
       if(document.getElementById('Arrival').value == "" ){
-        this.errors = "Please enter arrival station";
+        this.errors = "Hãy nhập ga đến";
         return false;
       } 
       if(this.arrivalStationID == null) {
         if(!this.setDataArrive()){
-          this.errors = "Arrival station invalid";
+          this.errors = "Ga đến không được để trống";
           return false;
         }
       }
       if(this.departureStationID == this.arrivalStationID) {
-        this.errors = "Departure and destination station aren't the same";
+        this.errors = "Ga đi và ga đến không được trùng nhau";
         return false;
       }
 
       if(this.round_trip) {
         if(this.depart_date > this.return_date) {
-          this.errors = "Departure date cannot be greater than return date";
+          this.errors = "Ngày đi không được hơn ngày về";
           return false;
         }
       }

@@ -124,7 +124,7 @@
                     <a id="menudashboard" href="./dashboard" class="nav-link">
                         <i class="fas fa-chart-line"
                             style="color:chartreuse;background: -webkit-linear-gradient(#eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;"></i>&nbsp;
-                        <p>THỐNG KÊ</p>
+                        <p>DASHBOARD</p>
                     </a>
                 </li>
                 <%}%>
@@ -141,13 +141,13 @@
                         <li class="nav-item">
                             <a href="./ticket" id="menuticket" class="nav-link" style="color:white;">
                                 <i class="fa fa-print nav-icon"></i>
-                                <p>In vé</p>
+                                <p>Print Ticket</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="./cancelticket" id="menucancelticket" class="nav-link" style="color:white;">
                                 <i class="fa fa-times nav-icon"></i>
-                                <p>Huỷ vé</p>
+                                <p>Cancel Ticket</p>
                             </a>
                         </li>
                     </ul>
@@ -157,7 +157,7 @@
                     <a id="menuschedule" href="./schedule" class="nav-link" style="color:white;">
                         <i class="fa fa-calendar nav-icon"></i>
                         <p>
-                            LỊCH TRÌNH
+                            Schedule
                         </p>
                     </a>
                 </li>
@@ -170,7 +170,7 @@
                     <a class="nav-link" style="color:white">
                         <i class="fas fa-tasks"></i>&nbsp;
                         <p>
-                            QUẢN LÝ THỰC THỂ
+                            Managment
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
@@ -178,45 +178,45 @@
                         <li class="nav-item">
                             <a id="menucustomer" href="./customer" class="nav-link" style="color: white;">
                                 <i class="fa fa-user nav-icon"></i>
-                                <p>Hành khách</p>
+                                <p>Passenger</p>
                             </a>
                         </li>
                         <%if(Staff.Role == 3){%>
                             <li class="nav-item">
                                 <a id="menustation" href="./station" class="nav-link" style="color:white;">
                                     <i class="fa fa-map nav-icon"></i>
-                                    <p>Ga</p>
+                                    <p>Station</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a id="menutrain" href="./train" class="nav-link" style="color:white;">
                                     <i class="fa fa-train nav-icon"></i>
-                                    <p id="t">Tàu</p>
+                                    <p id="t">Train</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a id="menucarriage" href="./carriage" class="nav-link" style="color:white;">
                                     <i class="fa fa-shopping-cart nav-icon"></i>
-                                    <p id="t">Toa </p>
+                                    <p id="t">Carriage </p>
                                 </a>
                             </li>
                             <li class="nav-item has-treeview  menu-open">
                                 <a class="nav-link" style="color:white;">
                                     <i class="nav-icon fa fa-chair"></i>
                                     <p>
-                                        Chỗ ngồi
+                                        Seat
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview" style="margin-left: 15px;">
                                     <li class="nav-item">
                                         <a id="menuseat" href="./seat" class="nav-link" style="color:white;">
-                                            <p>Ghế</p>
+                                            <p>Seat</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a id="menuseattype" href="./seattype" class="nav-link" style="color: white;">
-                                            <p>Loại ghế</p>
+                                            <p>Seat Type</p>
                                         </a>
                                     </li>
                                 </ul>

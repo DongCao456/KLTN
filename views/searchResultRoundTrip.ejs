@@ -141,34 +141,34 @@
             <ul class="progressbar small-text bold">
                 <%if(STEP == 1){%>
                     <li class="current">
-                        <span>DEPARTURE</span>
+                        <span>KHỞI HÀNH</span>
                         <em class="progress-bar-arrow "></em>
                     </li>
                     <li class="">
-                        <span>RETURN</span>
+                        <span>QUAY LẠI</span>
                         <em class="progress-bar-arrow "></em>
                     </li>
                 <%}%>
                 <%if(STEP == 2){%>
                     <li class="active">
-                        <a v-bind:href="hrefDeparture">DEPARTURE</a>
+                        <a v-bind:href="hrefDeparture">KHỞI HÀNH</a>
                         <em class="progress-bar-arrow "></em>
                     </li>
                     <li class="current">
-                        <span>RETURN</span>
+                        <span>QUAY LẠI</span>
                         <em class="progress-bar-arrow "></em>
                     </li>
                 <%}%>
                 <li class="">
-                    <span>PASSENGERS</span>
+                    <span>HÀNH KHÁCH</span>
                     <em class="progress-bar-arrow "></em>
                 </li>
                 <li class="">
-                    <span>PAYMENT</span>
+                    <span>THANH TOÁN </span>
                     <em class="progress-bar-arrow "></em>
                 </li>
                 <li class="">
-                    <span>CONFIRMATION</span>
+                    <span>XÁC NHẬN</span>
                     <em class="progress-bar-arrow "></em>
                 </li>
             </ul>
@@ -186,13 +186,13 @@
                 <%if(STEP == 1){%>
                     <div class="col-xs-8 col-sm-6">
                         <div class="current bold">
-                            <span>Departure</span>
+                            <span>KHỞI HÀNH</span>
                         </div>
                     </div>
                 <%}%>
                 <%if(STEP ==2){%>
                     <li class="current bold">
-                        <span>Return</span>
+                        <span>QUAY LẠI</span>
                         <em class="progress-bar-arrow "></em>
                     </li>
                 <%}%>
@@ -264,13 +264,13 @@
                     <div class="col-xs-12">
                         <div class="usersearch-info-item" style="padding-left: 0px">
                             <span>
-                        Departure
+                        GA ĐI
                         <br>
                         <b class="super-bold">{{departure}}</b>
                     </span>
                             <span><i class="fa fa-long-arrow-right"></i></span>
                             <span>
-                        Destination                        <br>
+                        GA ĐẾN                        <br>
                         <b class="super-bold">{{arrival}}</b>
                     </span>
                         </div>
@@ -280,7 +280,7 @@
                         <i style="padding-right: 6px;" class="fa fa-calendar"></i>
                     </span>
                             <span>
-                        Depart                        <br>
+                        NGÀY ĐI                        <br>
                         <b class="super-bold">{{formatDate(result[0].DateDeparture)}} </b>     
                     </span>
                         </div>
@@ -290,7 +290,7 @@
                         <i style="padding-right: 6px;" class="fa fa-user"></i>
                     </span>
                             <span>
-                        Passengers                        <br>
+                        SỐ LƯỢNG HÀNH KHÁCH                        <br>
                         <b class="super-bold">{{query.PASSENGERS}}</b>        
                     </span>
                         </div>
@@ -490,12 +490,12 @@
     <!-- PC filter -->
     <div class="container">
         <div class="gap gap-title">
-            <h2>Select your departing trip</h2>
+            <h2>CHUYẾN ĐI HÀNH TRÌNH CỦA BẠN</h2>
             <div class="horizontal-devider"></div>
         </div>
         <div id="filter-transport" class="row main relative">
             <h1 style="margin-top: 0" class="booking-desp big-text col-md-7 col-sm-12">
-					Results from <span class="blue-text super-bold" >{{ departure }}</span> to <span class="blue-text super-bold" >{{ arrival }}</span> on <span class="bold">Wednesday, 18 March 2020</span>
+					TỪ <span class="blue-text super-bold" >{{ departure }}</span> đến <span class="blue-text super-bold" >{{ arrival }}</span> vào <span class="bold">{{formatDate(result[0].DateDeparture)}}</span>
 			</h1>
             
             <!--  filters-view-->
@@ -563,7 +563,7 @@
                             <th class="text-right" data-sort="departure">
 
                                 <i class="caret private-show hidden-xs"></i>
-                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Departure" data-original-title="" title="">Departure</span>
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Departure" data-original-title="" title="">Khởi hành</span>
 
                             </th>
                             <!-- <th class="text-right" data-sort="arrival">
@@ -571,15 +571,15 @@
                                 <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Arrival" data-original-title="" title="">Arrival</span>
                             </th> -->
                             <th class="text-center" data-sort="duration">
-                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Duration" data-original-title="" title="">Duration</span>
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Duration" data-original-title="" title="">Thời gian</span>
                                 <i class="caret private-show hidden-xs"></i>
                             </th>
                             <th class="hidden-sm hidden-xs selected" data-sort="score">
-                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Itinerary" data-original-title="" title="">Itinerary</span>
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Itinerary" data-original-title="" title="">Hành trình</span>
                                 <i class="caret private-show hidden-xs"></i>
                             </th>
                             <th class="price-alignment border-right" data-sort="price">
-                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Price" data-original-title="" title="">Price</span>
+                                <span class="sort-by" data-toggle="popover" data-container="body" data-placement="auto" data-trigger="hover" data-content="Sort by: Price" data-original-title="" title="">Giá</span>
                                 <i class="caret private-show hidden-xs"></i>
                             </th>
                             <th class="hidden-sm hidden-xs button-alignment border-right"></th>
@@ -601,8 +601,8 @@
                                 <div>Fr, 20/03</div>
                             </td> -->
                             <td class="text-center" style="width: 203px;">
-                                {{JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[0] + 'h ' + 
-                                parseInt(JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[1] * 0.6) + 'm'}} </td>
+                                {{JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[0] + 'giờ' + 
+                                parseInt(JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[1] * 0.6) + 'phút'}} </td>
                             <td class="searchresult-itenerary hidden-sm hidden-xs" style="width: 366px;"><span style="display: inline-block;">{{departure}}<br><span style="font-size: 13px;">{{departure}}</span></span> 
                                 <i class="icon have-node-code icon-train inline"></i> <span style="display: inline-block;">{{arrival}}<br><span style="font-size: 13px;">{{arrival}}</span></span>
                             </td>

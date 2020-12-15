@@ -378,8 +378,8 @@
                                 <div>Fr, 20/03</div>
                             </td> -->
                             <td class="text-center" style="width: 203px;">
-                                {{JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[0] + 'h ' + 
-                                parseInt(JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[1] * 0.6) + 'm'}} </td>
+                                {{JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[0] + 'giờ ' + 
+                                parseInt(JSON.stringify(getScheduleDetailByTrainID(train.ID)[0].ScheduleDetails[0].Time).split('.')[1] * 0.6) + 'phút'}} </td>
                             <td class="searchresult-itenerary hidden-sm hidden-xs" style="width: 366px;"><span style="display: inline-block;">{{departure}}<br><span style="font-size: 13px;">{{departure}}</span></span> 
                                 <i class="icon have-node-code icon-train inline"></i> <span style="display: inline-block;">{{arrival}}<br><span style="font-size: 13px;">{{arrival}}</span></span>
                             </td>
@@ -428,7 +428,7 @@
             <br>
             <div class="gap gap-mini"></div>
             <span class="big-text bold">
-            		We are sorry. No routes found for this date yet.            	</span>
+            		We are sorry. No routes found for this date yet.Xin lỗi quý khách,không có chuyến nào được tìm ngày hôm nay            	</span>
         </div>
 
         
