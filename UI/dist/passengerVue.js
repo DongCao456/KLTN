@@ -435,7 +435,7 @@ var vm = new Vue({
                         }
                         else 
                         {
-                            this.error = "Exceeded quantity passengers";
+                            this.error = "Không thêm ghế được nữa";
                             $("#errors").modal({
                                 fadeDuration: 100
                             });
@@ -490,7 +490,7 @@ var vm = new Vue({
                         }
                         else 
                         {
-                            this.error = "Exceeded quantity passengers";
+                            this.error = "Không thêm ghế được nữa";
                             $("#errors").modal({
                                 fadeDuration: 100
                             });
@@ -553,7 +553,7 @@ var vm = new Vue({
                         }
                         else 
                         {
-                            this.error = "Exceeded quantity passengers";
+                            this.error = "Không thêm ghế được nữa";
                             $("#errors").modal({
                                 fadeDuration: 100
                             });
@@ -608,7 +608,7 @@ var vm = new Vue({
                         }
                         else 
                         {
-                            this.error = "Exceeded quantity passengers";
+                            this.error = "Không thêm ghế được nữa";
                             $("#errors").modal({
                                 fadeDuration: 100
                             });

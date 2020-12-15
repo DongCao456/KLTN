@@ -143,15 +143,15 @@
         </div>
                   <!-- DESKTOP MANAGE BOOKING -->
                                     <div style="padding: 0 25px;" class="sidebar-menu-style pull-right hidden-sm hidden-xs">
-                        <a href="https://www.baolau.vn/en/manage" target="_blank">
+                        <a href="/" target="_blank">
                             <i style="padding-right: 5px" class="fa fa-file-text" aria-hidden="true"></i>
-                            Manage booking                        </a>
+                            Tìm vé                        </a>
                     </div>
                 <!-- DESKTOP DESTINATIONS -->
                                     <div style="padding: 0 25px;" class="sidebar-menu-style pull-right hidden-sm hidden-xs">                        
-                        <a href="destinations.html">
+                        <a href="/manageBooking">
                         	<i style="padding-right: 5px" class="fa fa-map-signs" aria-hidden="true"></i> 
-                        	Destinations                        </a>
+                        	Trang chủ                       </a>
                     </div>
                             </div><!-- sidebar-menu -->
             </div><!-- END sub-header -->
@@ -164,10 +164,10 @@
                 <div class="gap gap-section"></div>
                 <div class="bs-callout bs-callout-info">
                     <div class="padded-content">
-                        <div class="highlight-text">YOUR BOOKING</div>
+                        <div class="highlight-text">THÔNG TIN VÉ ĐẶT</div>
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-                                <span class="bold">BOOKING CODE:</span>
+                                <span class="bold">MÃ VÉ ĐẶT:</span>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
                                 <span class="blue-text super-bold"><%=result.ID%></span>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-                                <span class="bold">BOOKING DATE:</span>
+                                <span class="bold">NGÀY ĐẶT VÉ:</span>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
                                 <span><%=result.DateBooking%></span>
@@ -191,7 +191,7 @@
                         </div>
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-                                <span class="bold">TOTAL COST:</span>
+                                <span class="bold">TỔNG TIỀN:</span>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
                                 <span><%=JSON.stringify(result.TotalCost).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")%> VND</span>
@@ -199,7 +199,7 @@
                         </div>
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-                                <span class="bold">PASSPORT:</span>
+                                <span class="bold">HỘ CHIẾU/CMND:</span>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
                                 <span><%=result.Passport%></span>
@@ -207,10 +207,10 @@
                         </div>
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
-                                <span class="bold">STATUS BOOKING: </span>
+                                <span class="bold">TÌNH TRẠNG VÉ: </span>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-7">
-                                <span style="color: #81b900;">COMPLETE</span>
+                                <span style="color: #81b900;">HOÀN THÀNH</span>
                             </div>
                         </div>
                     </div>
@@ -242,13 +242,13 @@
                         <table id="table_id">
                             <thead>
                                 <tr>
-                                    <th>Full Name</th>
-                                    <th>Type Object</th>
-                                    <th>PASSPORT</th>
-                                    <th>DEPARTURE</th>
-                                    <th>DESTINATION</th>
-                                    <th>AMOUNT OF MONEY</th>
-                                    <th>STATUS</th>
+                                    <th>Họ Tên</th>
+                                    <th>Loại Ghế</th>
+                                    <th>Hộ Chiếu/CMND</th>
+                                    <th>Ga Đi</th>
+                                    <th>Ga Đến</th>
+                                    <th>Giá</th>
+                                    <th>Tình Trạng</th>
                                     <th></th>
                                 </tr>
                             </thead>
