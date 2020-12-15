@@ -265,7 +265,7 @@ module.exports.createScheduleDetail = async function (req, res) {
     DepartureStationID: departID,
     ArrivalStationID: arrivalID,
     Length: distance,
-    Time: (distance / 60).toFixed(2),
+    Time: (distance / 60).toFixed(2), //avg speed  = 60km/h
     StartTime: time.format("HH:mm")
   }
   db.ScheduleDetail.create(sche).then(r => res.send(r));
