@@ -146,7 +146,7 @@
                                 <span>                           
                                     <%var DateDepart = new Date(moment(result[0].DateDeparture).add(hour,'hour').add(min, 'minutes'))%>
                                     <%var DateArrive = new Date(moment(result[0].DateDeparture).add(hour,'hour').add(result[0].ScheduleDetails[0].Time * 60 + min, 'minutes'))%>
-                                    <span class="bold"><%=new duration(DateDepart, DateArrive).toString("%Hs hour %M minutes")%></span>
+                                    <span class="bold"><%=new duration(DateDepart, DateArrive).toString("%Hs giờ %M phút")%></span>
                                 </span>
                             </td>
                             <td class="text-center" style="width: 163px;">
@@ -157,7 +157,7 @@
                                 <!-- style="border-right:1px solid #ddd; overflow:hidden"-->
                                 <!--<div class="side_point">
                                                 <span class="side_line">-->
-                                <span class="bold">Vietnam Railways</span> <%=train.Name%>
+                                <span class="bold">Tàu</span> <%=train.Name%>
                                 <!--</span>
                                         </div>-->
                             </td>
@@ -366,7 +366,7 @@
                 target="_self" 
                 id="bookLink<%=SCHEDULEDETAILID%>"
                 data-href="/searchSchedule?ROUND_TRIP=<%=ROUND_TRIP%>&STEP=<%=STEP%>&RETURN=<%=RETURN%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>">
-                    <span class="bold">BOOKING ONLINE</span>
+                    <span class="bold">ĐẶT VÉ TÀU TRỰC TUYẾN</span>
                 </a>
                 
             </div>
@@ -377,7 +377,7 @@
                 target="_self" 
                 id="bookLink<%=SCHEDULEDETAILID%>"
                 data-href="/passenger?ROUND_TRIP=<%=ROUND_TRIP%>&PASSENGERS=<%=PASSENGERS%>&SCHEDULEID=<%=SCHEDULEID%>&TRAINID=<%=TrainID%>&SCHEDULEDETAILID=<%=SCHEDULEDETAILID%>&FROM=<%=FROM%>&TO=<%=TO%>&DEPART=<%=DEPART%>">
-                    <span class="bold">BOOKING ONLINE</span>
+                    <span class="bold">ĐẶT VÉ TÀU TRỰC TUYẾN</span>
                 </a>
                 
             </div>

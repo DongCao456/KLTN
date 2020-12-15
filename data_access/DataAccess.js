@@ -11,7 +11,7 @@ var sequelize = new Sequelize('TrainTicketDatabase', 'sa', 'sapassword', {
     dialect: 'mssql',
     host: 'localhost',
     // port: '1433'
-    port: '49992'
+    port: '1433'
 })
 
 //Check port SQL
