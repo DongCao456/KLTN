@@ -332,28 +332,24 @@ new Vue({
                         </time>
                     </section>
                     <section class="card-cont">
-                        <p style="font-size:1em;">${t.Customer.Name}</p>
-                        <h3>${this.Stations.find(x => x.ID == t.DepartureStationID).Name} đi ${this.Stations.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
+                        <p style="font-size:1em;">Họ tên: ${t.Customer.Name}</p>
+                        <h3>Ga đi - ga đến: ${this.Stations.find(x => x.ID == t.DepartureStationID).Name} - ${this.Stations.find(x => x.ID == t.ArrivalStationID).Name}</h3 >
                     <div class="even-date">
                         <i class="fa fa-calendar"></i>
                         <time>
-                            <span>${new Date(t.DepartureDate).toDateString()}</span>
-                            <span>${new Date(t.DepartureTime).toLocaleTimeString()}</span>
-                            <span>${t.Price.toFixed(2)} VND</span>
+                            <span>Ngày đi: ${new Date(t.DepartureDate).toDateString()}</span>
+                            <span>Giờ đi: ${new Date(t.DepartureTime).toLocaleTimeString()}</span>
+                            <span>Giá vé: ${t.Price.toFixed(2)} VND</span>
                         </time>
                     </div>
                     <div class="even-info">
                         <i class="fa fa-map-marker"></i>
-                        <h3 style="color:red;">${t.TrainName}</h3>
-                        <h4 style="color:black;"> ${this.Carr.find(x => x.ID == t.Seat.CarriageID).Name}</h4>
-                        
-                    </div>
-                    <h1 class="seat" style="color:red;">${t.Seat.SeatNumber}</h1>
-                    </section >
-                    </article >
-                        <hr style="width: 100%;border-top: 1px dashed black;">
-                        </hr>
-
+                        <h3 style="color:red;">Tàu: ${t.TrainName}</h3>
+                        <h3 style="color:red;">Toa: ${this.Carr.find(x => x.ID == t.Seat.CarriageID).Name}</h4>
+                        <h3 style="color:red;">Ghế: ${t.Seat.SeatNumber}</h3>
+                    </div>                    
+                    </section>
+                    </article>                    
                 </div > `)
             })}`)
             newWin.document.write(`</section></body></html>`)
