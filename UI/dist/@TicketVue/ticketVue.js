@@ -71,7 +71,7 @@ new Vue({
                             <div>
                                 <p>Name: <strong>${repre.data[0].Name}</strong></p>
                                 <p>Email: ${repre.data[0].Email}</p>
-                                <p>Passport: ${repre.data[0].Passport}</p>
+                                <p>Passport/ID: ${repre.data[0].Passport}</p>
                                 <p>Phone: ${repre.data[0].Phone}</p>
                                 <table id="ticktab" border="1" style="width:100%;">
                                     <thead>
