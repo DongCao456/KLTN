@@ -31,7 +31,8 @@ new Vue({
         hrefDeparture: localStorage.getItem('departure'),
         hrefPassengers: localStorage.getItem('passenger'),
         checkbox: null,
-        checkbox1: null
+        checkbox1: null,
+        isPaypal: false
     },
     methods: {
         displaySeatTypeName: function(){
@@ -69,7 +70,15 @@ new Vue({
         Redirect: function() {
             //alert(document.getElementById("checkbox"));
             if(document.getElementById("check-confirm-termofuse").checked && document.getElementById("check-confirm-cancellation").checked) {
-                location.href = '/RedirectToNganLuong';
+                
+                if(!this.isPaypal)
+                {
+                    location.href = '/RedirectToNganLuong';
+                }
+                else 
+                {
+                    location.href = '/RedirectToPaypal';
+                }
             }
             else {
                 $("#errors").modal({

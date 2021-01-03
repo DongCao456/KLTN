@@ -2,6 +2,7 @@ var express = require("express");
 var controller = require("./controller/indexController");
 var managerCtrler = require("./controller/managerController");
 var loginController = require("./controller/loginController");
+var paypalController = require("./controller/paypalController");
 var bodyParser = require("body-parser");
 var session = require('express-session');
 var cookieParser = require('cookie-parser')
@@ -162,6 +163,10 @@ app.get('/paymentSuccess', function (req, res) {
 
 app.get('/RedirectToNganLuong', function (req, res) {
     controller.RedirectToNganLuong(req, res);
+})
+
+app.get('/RedirectToPaypal', function (req, res) {
+    paypalController.Payment(req, res);
 })
 
 //get List

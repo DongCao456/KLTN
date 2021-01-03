@@ -202,7 +202,8 @@
                             <div id="tabs-menu-style">
                                 <nav class="scroll-fixed-navi" role="navigation">
                                     <ul class="scroll-menu" id="payment_group_tabs">
-                                        <li class="active"><a href="#tab-payment-credit" data-toggle="tab" aria-expanded="true">Ngan Luong</a></li>
+                                        <li class="active"><a href="#tab-payment-credit" data-toggle="tab" aria-expanded="true" v-on:click="isPaypal = false">Ngan Luong</a></li>
+                                        <li class=""><a href="#tab-payment-credit" data-toggle="tab" aria-expanded="true" v-on:click="isPaypal = true">Paypal</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -214,7 +215,7 @@
     
                                     <!-- INTERNATIONAL_CARD  -->
                                     <div id="collapse_payment_onepay_international_select" class="toggle-collapse toggle-container">
-                                        <div class="panel-light payment-card gap-mini-mini">
+                                        <div class="panel-light payment-card gap-mini-mini" v-if="!isPaypal">
                                             <div class="padded-heading border-bottom">
                                                 <a class="" role="button" data-toggle="collapse" href="#collapse_payment_onepay" style="display: none" aria-expanded="true"></a>
                                                 <div class="radio">

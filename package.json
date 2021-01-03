@@ -1318,6 +1318,7 @@
       "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz",
       "version": "0.1.7"
     },
+    "paypal-rest-sdk": "^1.8.1",
     "performance-now": {
       "integrity": "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=",
       "resolved": "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz",

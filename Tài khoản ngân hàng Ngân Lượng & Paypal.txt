@@ -1,0 +1,20 @@
++ Thanh toán bằng ATM Online: chọn ngân hàng exim bank với thông tin thẻ:
+● Số thẻ: 9874563254178962
+● Họ tên chủ thẻ: Nguyen Hue
+● Ngày phát hành: 10/2016
+● Mã OTP: 123456
+●
++ Thanh toán bằng thẻ visa, với thông tin thẻ:
+● Số thẻ: 4111111111111111
+● Họ tên chủ thẻ: Nguyen Hue
+● Ngày hết hạn: 10/2023
+● Mã CVV: 123
+● Mã OTP: 123456
+
++Thanh Toán Paypal 
+ID: abin.crazy@yahoo.com.vn
+PW: 451998/Lh
+Card Type: Visa
+Card Number: 4032033284490468
+Expiration Date: 01/2023
+CVV: 390

@@ -626,7 +626,6 @@ module.exports.getSeatTypeBySeatID = function (req, res) {
 }
 
 module.exports.RedirectToNganLuong = function (req, res) {
-    // let return_url = "https://trainticketonlinevn.herokuapp.com/paymentSuccess";
     let return_url = "http://localhost:3000/paymentSuccess";
     let url = 'https://sandbox.nganluong.vn:8088/nl35/checkout.php?';
     url += 'merchant_site_code=49760&';
@@ -650,6 +649,9 @@ module.exports.RedirectToNganLuong = function (req, res) {
     url += 'secure_code=' + secure_code;
     res.redirect(url);
 }
+
+
+
 
 function SendMail(email ,html, option){
     var mailOptions = {
@@ -689,13 +691,13 @@ module.exports.InsertData = async function (req, res, listBlock) {
     var option = "Một Chiều";
     if (typeof(req.cookies.data5) != "undefined") {
         ListTicket2 = req.cookies.data5;     
-        html2 = await createTableListCustomer(Representative, ListPassenger, ListTicket2, req.query.payment_id);
+        html2 = await createTableListCustomer(Representative, ListPassenger, ListTicket2, req.query.payment_id ? req.query.payment_id : req.query.paymentId);
         option = "Khứ Hồi";
         SendMail(Representative.Email, html2, option)
         await unblockSeat(ListTicket2, listBlock);
     }
 
-    var html = await createTableListCustomer(Representative, ListPassenger, ListTicket, req.query.payment_id);
+    var html = await createTableListCustomer(Representative, ListPassenger, ListTicket, req.query.payment_id ? req.query.payment_id : req.query.paymentId);
     SendMail(Representative.Email, html, option)
     await unblockSeat(ListTicket, listBlock);
     db.Representative.create(Representative).then(data => {
